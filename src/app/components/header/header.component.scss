@@ -1,0 +1,31 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5rem 1rem;
+    background: #FFFFFF;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.05);
+
+    .logo-sec {
+        display: flex;
+        align-items: center;
+
+        h2 {
+            padding: 0 .5rem;
+        }
+    }
+    
+    .navbar {
+        .item, .icon{
+            color: #949EA0;
+        }
+        .item {
+            margin: 0 1.5rem;
+            cursor: pointer;
+        }
+
+        .icon {
+            font-size: 2rem;
+        }
+    }
+}

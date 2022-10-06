@@ -1,1 +1,112 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'material-symbols';
+
+$primary-bg-color: linear-gradient(270deg, #ECBCB3 0%, #EAA79E 100%);
+$primary-color: #EAA79E;
+$primary-shadow: 0px 15px 20px rgba(234, 168, 159, 0.2);;
+
+
+body {
+    margin: 0;
+    background-color: #F2F2F2;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.text-accent {
+    color: #EAA79E !important;
+}
+
+.primary-rounded-btn {
+    color: #ffffff !important;
+    padding: .7rem 1.5rem;
+    margin: 0 !important;
+    background: $primary-bg-color;
+    box-shadow: $primary-shadow;
+    border-radius: 50px;
+}
+
+.primary-btn {
+    color: #ffffff !important;
+    border: none;
+    background: $primary-bg-color;
+    box-shadow: $primary-shadow;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.input-group {
+    position: relative;
+    font-family: 'Ubuntu';
+
+    input {
+        padding: 2rem 1rem;
+        border: unset;
+        outline: unset;
+        width: 100%;
+        box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.05);
+        border-radius: 3px;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 18px;
+        color: #949EA0;
+        box-sizing: border-box;
+    }
+
+    span {
+        position: absolute;
+        right: 1rem;
+        font-size: 2rem;
+        top: 50%;
+        transform: translate(0%, -50%);
+        color: $primary-color;
+    }
+}
+
+// Custom form inputs with floating label
+.form-input {
+    display: flex;
+    flex-flow: column;
+    text-align: left;
+    margin: 0 5px 10px 5px;
+    position: relative;
+    user-select: none;
+
+    label,
+    input {
+        transition: all 0.2s;
+        touch-action: manipulation;
+        font-size: 18px;
+    }
+
+    label {
+        color: #949EA0;
+        position: absolute;
+        padding: 1rem;
+        cursor: text;
+        left: 0;
+
+    }
+
+    input {
+        background: #F5F6F7;
+        border: 1px solid #DFE5EA;
+        border-radius: 3px;
+        color: #334144;
+        font-family: inherit;
+        outline: 0;
+        padding: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+
+        &:focus {
+            outline: 0;
+            border: 1px solid #666;
+        }
+
+        &:not(:placeholder-shown)+label, &:focus+label {
+            transform: translate(-.7rem, -1rem) scale(.7);
+            padding: 1rem;
+        }
+    }
+
+}
