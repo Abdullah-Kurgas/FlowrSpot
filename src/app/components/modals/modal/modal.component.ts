@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ModalsService } from 'src/app/shared/modals.service';
 
 @Component({
   selector: 'fs-modal',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModalComponent implements OnInit {
 
-  constructor() { }
+  @Input() type!: string;
+
+  constructor(public modalService: ModalsService) { }
 
   ngOnInit(): void {
   }

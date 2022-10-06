@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalsService } from 'src/app/shared/modals.service';
 
 @Component({
   selector: 'fs-home',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(public modalService: ModalsService) { }
 
   ngOnInit(): void {
   }

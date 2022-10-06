@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ModalsService } from './shared/modals.service';
 
 @Component({
   selector: 'fs-root',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'FlowrSpot';
+
+  constructor(public modalService: ModalsService) {}
 }

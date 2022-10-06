@@ -3,7 +3,7 @@
     <div class="modal">
         <span class="material-symbols-outlined close-btn">close</span>
 
-        <!-- <div class="profile">
+        <div class="profile" *ngIf="type == 'profile'">
             <div class="sm-info">
                 <div class="profile-img">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwPZRlDLLRvB5Qnb1gjwLZmzdopBRgIZ2yPw&usqp=CAU"
@@ -33,9 +33,9 @@
                     <span>michael.berry@gmail.com</span>
                 </div>
             </div>
-        </div> -->
+        </div>
 
-        <div class="settings">
+        <div class="settings"  *ngIf="type == 'settings'">
             <div class="title">
                 <h2>Settings</h2>
                 <span class="material-symbols-outlined">settings</span>
@@ -67,8 +67,8 @@
         </div>
 
         <div class="logout-btn">
-            <!-- <button class="primary-btn">Logout</button> -->
-            <button class="primary-btn">Save settings</button>
+            <button class="primary-btn" *ngIf="type == 'profile'">Logout</button>
+            <button class="primary-btn" *ngIf="type == 'settings'">Save settings</button>
         </div>
 
     </div>

@@ -1,39 +1,53 @@
 <div class="modal-bg">
 
     <div class="modal">
-        <h2>Create an Account</h2>
-        <!-- <h2>Welcome Back</h2> -->
-        <div class="name-field">
-            <div class="form-input">
-                <input type="text" name="fullname" id="firstName" placeholder=" ">
-                <label for="firstName">First Name</label>
+        <div *ngIf="type == 'register'">
+            <h2>Create an Account</h2>
+            <div class="name-field">
+                <div class="form-input">
+                    <input type="text" name="fullname" id="firstName" placeholder=" ">
+                    <label for="firstName">First Name</label>
+                </div>
+                <div class="form-input">
+                    <input type="text" name="fullname" id="lastName" placeholder=" ">
+                    <label for="lastName">Last Name</label>
+                </div>
             </div>
+
             <div class="form-input">
-                <input type="text" name="fullname" id="lastName" placeholder=" ">
-                <label for="lastName">Last Name</label>
+                <input type="date" id="date" placeholder=" ">
+                <label for="date">Date of Birth</label>
             </div>
-        </div>
-        
-        <div class="form-input">
-            <input type="date" id="date" placeholder=" ">
-            <label for="date">Date of Birth</label>
+
+            <div class="form-input">
+                <input type="email" id="email" placeholder=" ">
+                <label for="email">Email Address</label>
+            </div>
+
+            <div class="form-input">
+                <input type="password" id="password" placeholder=" ">
+                <label for="password">Password</label>
+            </div>
         </div>
 
-        <div class="form-input">
-            <input type="email" id="email" placeholder=" ">
-            <label for="email">Email Address</label>
-        </div>
+        <div *ngIf="type == 'login'">
+            <h2>Welcome Back</h2>
+            <div class="form-input">
+                <input type="email" id="email" placeholder=" ">
+                <label for="email">Email Address</label>
+            </div>
 
-        <div class="form-input">
-            <input type="password" id="password" placeholder=" ">
-            <label for="password">Password</label>
+            <div class="form-input">
+                <input type="password" id="password" placeholder=" ">
+                <label for="password">Password</label>
+            </div>
         </div>
 
         <div class="create-btn">
-            <button class="primary-btn">Create Account</button>
-            <!-- <button class="primary-btn">Login to your Account</button> -->
+            <button class="primary-btn" *ngIf="type == 'register'">Create Account</button>
+            <button class="primary-btn" *ngIf="type == 'login'">Login to your Account</button>
         </div>
     </div>
-    <span class="cancel-text">I don't want to register</span>
+    <span class="cancel-text" (click)="modalService.close()">I don't want to register</span>
 
 </div>

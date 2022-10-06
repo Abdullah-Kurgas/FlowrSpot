@@ -9,8 +9,8 @@
             <span class="item">Latest Sightings</span>
             <span class="item">Favorites</span>
             <div>
-                <span class="item text-accent">Login</span>
-                <span class="item primary-rounded-btn">New Account</span>
+                <span class="item text-accent" (click)="modalService.open('modal', 'login')">Login</span>
+                <span class="item primary-rounded-btn" (click)="modalService.open('modal', 'register')">New Account</span>
             </div>
 
             <!-- <div class="profile-header">
