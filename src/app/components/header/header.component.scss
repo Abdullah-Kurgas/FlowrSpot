@@ -5,6 +5,7 @@
     padding: .5rem 1rem;
     background: #FFFFFF;
     box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.05);
+    user-select: none;
 
     .logo-sec {
         display: flex;
@@ -14,18 +15,33 @@
             padding: 0 .5rem;
         }
     }
-    
+
     .navbar {
-        .item, .icon{
-            color: #949EA0;
+        .list {
+            display: flex;
+            align-items: center;
+
+            .item {
+                margin: 0 1.5rem;
+                cursor: pointer;
+            }
+
+            .profile-header {
+                display: flex;
+                align-items: center;
+            }
+
         }
-        .item {
-            margin: 0 1.5rem;
-            cursor: pointer;
+
+        .item,
+        .icon {
+            color: #949EA0;
         }
 
         .icon {
             font-size: 2rem;
+            cursor: pointer;
         }
+
     }
 }
