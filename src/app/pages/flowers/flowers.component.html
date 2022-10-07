@@ -1,1 +1,8 @@
-<fs-list [dataList]="flowers"></fs-list>
+<div>
+    <div class="input-search-group" *ngIf="showSearch">
+        <input type="text" placeholder="Looking for something specific?">
+        <span class="material-symbols-outlined">search</span>
+    </div>
+
+    <fs-list [dataList]="flowers"></fs-list>
+</div>

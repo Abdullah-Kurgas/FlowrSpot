@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { AppState } from 'src/app/appState';
@@ -12,6 +12,7 @@ import { FlowerService } from 'src/app/shared/services/flower.service';
   styleUrls: ['./flowers.component.scss']
 })
 export class FlowersComponent implements OnInit {
+  @Input() showSearch: boolean = true;
   flowers!: Observable<IFlower[]>;
 
   constructor(private flowerService: FlowerService, private store: Store<AppState>) {

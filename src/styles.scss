@@ -39,12 +39,14 @@ body {
     cursor: pointer;
 }
 
-.input-group {
-    position: relative;
+.input-search-group {
     font-family: 'Ubuntu';
+    position: relative;
+    width: 600px;
+    margin: 1rem auto;
 
     input {
-        padding: 2rem 1rem;
+        padding: 1.5rem 1rem;
         border: unset;
         outline: unset;
         width: 100%;
