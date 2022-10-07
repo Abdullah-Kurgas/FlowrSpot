@@ -13,6 +13,7 @@ import { InfoModalComponent } from './components/modals/info-modal/info-modal.co
 
 import { StoreModule } from '@ngrx/store';
 import { authReducer, userReducer } from './shared/reducers/authReducer';
+import { flowerReducer } from './shared/reducers/flowerReducer';
 import { FavoriteComponent } from './pages/favorite/favorite.component';
 import { FlowersComponent } from './pages/flowers/flowers.component';
 import { ListComponent } from './components/list/list.component';
@@ -37,7 +38,8 @@ import { ListComponent } from './components/list/list.component';
     FormsModule,
     StoreModule.forRoot({
       authToken: authReducer,
-      user: userReducer
+      user: userReducer,
+      flowers: flowerReducer
     })
   ],
   providers: [],
