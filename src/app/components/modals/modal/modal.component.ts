@@ -6,6 +6,7 @@ import { ModalsService } from 'src/app/shared/services/modals.service';
 import { IUser, User } from 'src/app/shared/models/User';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { mergeMap, tap } from 'rxjs';
+import { ApiService } from 'src/app/shared/services/api.service';
 
 @Component({
   selector: 'fs-modal',
@@ -17,7 +18,7 @@ export class ModalComponent implements OnInit {
 
   @Input() type!: string;
 
-  constructor(public modalService: ModalsService, private store: Store<AppState>, private authService: AuthService) { }
+  constructor(public modalService: ModalsService, private store: Store<AppState>, private authService: AuthService, private apiService: ApiService) { }
 
   ngOnInit(): void {
   }
@@ -26,10 +27,11 @@ export class ModalComponent implements OnInit {
 
     this.authService.getAuthToken(type, this.user)
     .pipe(
-      mergeMap( (token: any) =>{
+      mergeMap( (token: any) => {
+        this.apiService.authToken = token['auth_token'];
         this.store.dispatch(new AuthToken(token['auth_token']));
         
-        return this.authService.getUserData(token['auth_token'], 'me')
+        return this.authService.getUserData('me');
       })
     )
     .subscribe({

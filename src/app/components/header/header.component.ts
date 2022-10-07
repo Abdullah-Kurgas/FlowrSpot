@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
   constructor(public modalService: ModalsService, public store: Store<AppState>) { }
 
   ngOnInit(): void {
-      this.store.select('user').subscribe({
+      this.store.select(state => state.user).subscribe({
       next: (user) => {
         this.user = user;
       },

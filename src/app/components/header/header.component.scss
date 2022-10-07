@@ -29,6 +29,14 @@
             .profile-header {
                 display: flex;
                 align-items: center;
+
+                span {
+                    cursor: unset;
+                }
+
+                img {
+                    cursor: pointer;
+                }
             }
 
         }

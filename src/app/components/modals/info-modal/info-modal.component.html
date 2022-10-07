@@ -1,16 +1,16 @@
 <div class="modal-bg">
 
-    <div class="modal">
-        <span class="material-symbols-outlined close-btn">close</span>
+    <div class="modal" for *ngFor="let item of profiles | async">
+        <span class="material-symbols-outlined close-btn" (click)="modalService.close()">close</span>
 
-        <div class="profile" *ngIf="type == 'profile'">
+        <div class="profile" *ngIf="type == 'profile'" >
             <div class="sm-info">
                 <div class="profile-img">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwPZRlDLLRvB5Qnb1gjwLZmzdopBRgIZ2yPw&usqp=CAU"
+                    <img src="../../../../assets/profile-holder.png"
                         alt="profile-pic">
                 </div>
                 <div class="info">
-                    <h1>Michael Berry</h1>
+                    <h1>{{item.first_name}} {{item.last_name}}</h1>
                     <span>47 sightings</span>
                 </div>
             </div>
@@ -18,11 +18,11 @@
             <div class="content">
                 <div>
                     <p>First Name</p>
-                    <span>Michael</span>
+                    <span>{{item.first_name}}</span>
                 </div>
                 <div>
                     <p>Last Name</p>
-                    <span>Berry</span>
+                    <span>{{item.last_name}}</span>
                 </div>
                 <div>
                     <p>Date of Birth</p>
@@ -67,7 +67,7 @@
         </div>
 
         <div class="logout-btn">
-            <button class="primary-btn" *ngIf="type == 'profile'">Logout</button>
+            <button class="primary-btn" *ngIf="type == 'profile'" (click)="userLogout()">Logout</button>
             <button class="primary-btn" *ngIf="type == 'settings'">Save settings</button>
         </div>
 

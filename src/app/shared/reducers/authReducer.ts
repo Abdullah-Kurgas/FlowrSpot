@@ -10,17 +10,25 @@ export function authReducer(state: string | null = initialAuthToken, action: any
       localStorage.setItem('authToken', action.payload);
       return state = action.payload;
 
+      case AuthActions.LOGOUT:
+        localStorage.removeItem('authToken');
+        return state = null;
+
     default:
       return state;
   }
 };
 
 
-export function userReducer(state: IUser | undefined = initialUser, action: any) {
+export function userReducer(state: IUser | null = initialUser, action: any) {
     switch (action.type) {
       case AuthActions.LOGIN:
         localStorage.setItem('fsUserData', JSON.stringify(action.payload));
         return Object.assign({}, state, action.payload);
+
+      case AuthActions.LOGOUT:
+      localStorage.removeItem('fsUserData');
+      return state = null;
       
       case AuthActions.REGISTER:
         localStorage.setItem('fsUserData', JSON.stringify(action.payload));
