@@ -2,7 +2,7 @@ import { Action } from "@ngrx/store";
 import { IFlower } from "../models/Flower";
 
 export const SETDATA = '[FLOWER] SETDATA';
-export const TOGGLEFAVORITE = '[FLOWER] TOGGLEFAVORITE';
+export const TOGGLE = '[FLOWER] TOGGLE';
 
 export class SetFlowers implements Action {
     readonly type: string = SETDATA;
@@ -10,10 +10,10 @@ export class SetFlowers implements Action {
     constructor(public payload: IFlower[]) { }
 }
 
-export class ToggleFavorite implements Action {
-    readonly type: string = TOGGLEFAVORITE;
+export class ToggleFlower implements Action {
+    readonly type: string = TOGGLE;
 
     constructor(public payload: IFlower) { }
 }
 
-export type FavoriteActions = SetFlowers | ToggleFavorite;
+export type FavoriteActions = SetFlowers | ToggleFlower;

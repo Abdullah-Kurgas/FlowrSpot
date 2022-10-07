@@ -17,6 +17,7 @@ import { flowerReducer } from './shared/reducers/flowerReducer';
 import { FavoriteComponent } from './pages/favorite/favorite.component';
 import { FlowersComponent } from './pages/flowers/flowers.component';
 import { ListComponent } from './components/list/list.component';
+import { favoriteReducer } from './shared/reducers/favoriteReducer';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { ListComponent } from './components/list/list.component';
     StoreModule.forRoot({
       authToken: authReducer,
       user: userReducer,
-      flowers: flowerReducer
+      flowers: flowerReducer,
+      favorites: favoriteReducer
     })
   ],
   providers: [],

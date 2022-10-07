@@ -5,4 +5,12 @@ export interface IFlower {
     name: string;
     profile_picture: string;
     sightings: number;
+    features: string[];
+    description: string;
+}
+
+export interface IFavorite {
+    id: number;
+    user_id: number;
+    flower: IFlower
 }

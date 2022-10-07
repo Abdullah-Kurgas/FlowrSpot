@@ -1,10 +1,10 @@
 <div class="card">
-    <div class="favorite-icon" [ngClass]="{'bg-primary': flower.favorite}" (click)="toggleFavorite(flower)">
+    <div class="favorite-icon" [ngClass]="{'bg-primary': getDataFromInsideObj(flower.favorite, flower)?.favorite}" (click)="toggleFavorite(flower)">
         <span class="material-symbols-outlined">star</span>
     </div>
     <div class="content">
-        <span class="title">{{flower.name}}</span>
-        <span class="subtitle">{{flower.latin_name}}</span>
-        <span class="footer" [ngClass]="{'bg-primary': flower.favorite}">{{flower.sightings}} sightings</span>
+        <span class="title">{{getDataFromInsideObj(flower.name, flower).name}}</span>
+        <span class="subtitle">{{getDataFromInsideObj(flower.latin_name, flower).latin_name}}</span>
+        <span class="footer" [ngClass]="{'bg-primary': getDataFromInsideObj(flower.favorite, flower)?.favorite}">{{getDataFromInsideObj(flower.sightings, flower).sightings}} sightings</span>
     </div>
 </div>

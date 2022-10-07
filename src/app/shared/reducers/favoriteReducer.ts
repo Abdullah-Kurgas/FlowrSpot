@@ -1,7 +1,7 @@
-import * as Actions from "../actions/flowerAction";
-import { IFlower } from "../models/Flower";
+import * as Actions from "../actions/favoriteAction";
+import { IFavorite } from "../models/Flower";
 
-export function flowerReducer(state: IFlower[], action: any) {
+export function favoriteReducer(state: IFavorite[], action: any) {
     switch(action.type) {
         case Actions.SETDATA:
             return state = action.payload;
@@ -14,10 +14,9 @@ export function flowerReducer(state: IFlower[], action: any) {
     }
 };
 
-const manageData = (data: IFlower[], flower: IFlower): IFlower[] => {
+const manageData = (data: IFavorite[], flower: IFavorite): IFavorite[] => {
     let index = data.findIndex(item=> item.id == flower.id);
-    flower.favorite = !flower.favorite;
-    data[index]= flower;
+    data.splice(index, 1);
 
     return data;
 }

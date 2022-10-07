@@ -5,4 +5,5 @@ export interface AppState {
     authToken: string;
     user: IUser;
     flowers: IFlower[];
+    favorites: IFlower[];
 }
