@@ -1,13 +1,13 @@
 <div class="header">
-    <div class="logo-sec">
+    <div class="logo-sec" [routerLink]="''">
         <img src="../../../assets/flower 1.png" alt="logo">
         <h2 class="text-accent">FlowrSpot</h2>
     </div>
     <div class="navbar">
         <div class="list">
-            <span class="item">Flowers</span>
-            <span class="item">Latest Sightings</span>
-            <span class="item">Favorites</span>
+            <span class="item" [routerLink]="['/flowers']">Flowers</span>
+            <span class="item" [routerLink]="['/sightings']">Latest Sightings</span>
+            <span class="item" [routerLink]="['/favorites']">Favorites</span>
             <div *ngIf="!user">
                 <span class="item text-accent" (click)="modalService.open('modal', 'login')">Login</span>
                 <span class="item primary-rounded-btn" (click)="modalService.open('modal', 'register')">New Account</span>

@@ -13,6 +13,9 @@ import { InfoModalComponent } from './components/modals/info-modal/info-modal.co
 
 import { StoreModule } from '@ngrx/store';
 import { authReducer, userReducer } from './shared/reducers/authReducer';
+import { FavoriteComponent } from './pages/favorite/favorite.component';
+import { FlowersComponent } from './pages/flowers/flowers.component';
+import { ListComponent } from './components/list/list.component';
 
 
 @NgModule({
@@ -22,7 +25,10 @@ import { authReducer, userReducer } from './shared/reducers/authReducer';
     HomeComponent,
     CardComponent,
     ModalComponent,
-    InfoModalComponent
+    InfoModalComponent,
+    FavoriteComponent,
+    FlowersComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,

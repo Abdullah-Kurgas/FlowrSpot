@@ -17,11 +17,7 @@ export class InfoModalComponent implements OnInit {
   @Input() type!: string;
 
   constructor(public modalService: ModalsService, public store: Store<AppState>) {
-    this.profiles = this.store.select((state: any) => {
-      console.log(state);
-      
-     return [state.user]
-    });
+    this.profiles = this.store.select((state: any) => [state.user] );
    }
 
   ngOnInit(): void { }
