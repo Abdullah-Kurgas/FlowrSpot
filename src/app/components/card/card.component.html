@@ -1,10 +1,10 @@
 <div class="card">
-    <div class="favorite-icon">
+    <div class="favorite-icon" [ngClass]="{'bg-primary': flower.favorite}">
         <span class="material-symbols-outlined">star</span>
     </div>
     <div class="content">
         <span class="title">{{flower.name}}</span>
         <span class="subtitle">{{flower.latin_name}}</span>
-        <span class="footer">{{flower.sightings}} sightings</span>
+        <span class="footer" [ngClass]="{'bg-primary': flower.favorite}">{{flower.sightings}} sightings</span>
     </div>
 </div>
