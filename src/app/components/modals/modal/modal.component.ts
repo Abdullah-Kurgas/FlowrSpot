@@ -28,7 +28,6 @@ export class ModalComponent implements OnInit {
     this.authService.getAuthToken(type, this.user)
     .pipe(
       mergeMap( (token: any) => {
-        this.apiService.authToken = token['auth_token'];
         this.store.dispatch(new AuthToken(token['auth_token']));
         
         return this.authService.getUserData('me');

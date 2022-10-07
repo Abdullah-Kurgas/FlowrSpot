@@ -8,26 +8,41 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class ApiService {
-  authToken!: string;
 
-  constructor(private http: HttpClient, private store: Store<AppState>) {
-    this.store.select(state => { state.authToken }).subscribe((token: any)=> this.authToken = token);
-   }
+  constructor(private http: HttpClient, private store: Store<AppState>) { }
 
+  getToken() {
+    let authToken;
+    this.store.select(state => state.authToken).subscribe((token: any) => authToken = token);
 
-  get(model: string, id: string, type?: string) {
-    return this.http.get(`${environment.backUrl}/api/v1/${model}/${id}${type ? ('/' + type) : ''}`, {
+    return authToken || '';
+  }
+
+  get(model: string, id?: number, type?: string) {
+    return this.http.get(`${environment.backUrl}/api/v1/${model}${this.checkIfDataExists(id)}${this.checkIfDataExists(type)}`, {
       headers: {
-        'Authorization': this.authToken || ''
+        'Authorization': this.getToken()
       }
     });
   }
 
-  post(model: string, type: string, data: any, id?: string) {
-    return this.http.post(`${environment.backUrl}/api/v1/${model}/${id ? ('/' + id) : ''}${type}`, data, {
+  post(model: string, type: string, data?: any, id?: number) {
+    return this.http.post(`${environment.backUrl}/api/v1/${model}${this.checkIfDataExists(id)}/${type}`, data, {
       headers: {
-        'Authorization': this.authToken || ''
+        'Authorization': this.getToken()
       }
     });
+  }
+
+  delete(model: string, type?: string, options?: {id: number, parent_id: number}) {
+    return this.http.delete(`${environment.backUrl}/api/v1/${model}${this.checkIfDataExists(options?.id)}${this.checkIfDataExists(type)}`, {
+      headers: {
+        'Authorization': this.getToken()
+      }
+    });
+  }
+
+  checkIfDataExists(data: any) {
+    return data ? ('/' + data) : '';
   }
 }
