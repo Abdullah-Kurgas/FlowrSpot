@@ -8,17 +8,17 @@
             <span class="item">Flowers</span>
             <span class="item">Latest Sightings</span>
             <span class="item">Favorites</span>
-            <div>
+            <div *ngIf="!user">
                 <span class="item text-accent" (click)="modalService.open('modal', 'login')">Login</span>
                 <span class="item primary-rounded-btn" (click)="modalService.open('modal', 'register')">New Account</span>
             </div>
 
-            <!-- <div class="profile-header">
-                <span class="item">John Duo</span>
+            <div class="profile-header" *ngIf="user">
+                <span class="item">{{user.first_name}} {{user.last_name}}</span>
                 <div>
                     <img src="../../../assets/menu_profile_holder.png" alt="profile-sm-img">
                 </div>
-            </div> -->
+            </div>
         </div>
 
         <!-- <span class="material-symbols-outlined icon">menu</span> -->

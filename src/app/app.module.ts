@@ -11,6 +11,10 @@ import { CardComponent } from './components/card/card.component';
 import { ModalComponent } from './components/modals/modal/modal.component';
 import { InfoModalComponent } from './components/modals/info-modal/info-modal.component';
 
+import { StoreModule } from '@ngrx/store';
+import { authReducer, userReducer } from './shared/reducers/authReducer';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +28,11 @@ import { InfoModalComponent } from './components/modals/info-modal/info-modal.co
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    StoreModule.forRoot({
+      authToken: authReducer,
+      user: userReducer
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

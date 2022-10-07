@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalsService } from 'src/app/shared/modals.service';
+import { ModalsService } from 'src/app/shared/services/modals.service';
 
 @Component({
   selector: 'fs-home',
