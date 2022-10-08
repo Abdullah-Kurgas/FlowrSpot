@@ -1,1 +1,19 @@
-<fs-list></fs-list>
+<div>
+    <div class="title">
+        <div class="headers">
+            <h1>Discover flowers around you</h1>
+            <span>Explore between more than 8.427 sightings</span>
+        </div>
+
+        <div class="primary-btn new-btn">
+            <span class="material-symbols-outlined">add</span>
+            <span>Add New Sighting</span>
+        </div>
+    </div>
+    <fs-list [dataList]="sightings" [dataType]="'sightings'"></fs-list>
+
+    <button class="primary-btn new-btn">
+        <span class="material-symbols-outlined">add</span>
+        <span>Add New Sighting</span>
+    </button>
+</div>

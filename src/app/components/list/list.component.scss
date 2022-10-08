@@ -1,24 +1,33 @@
-.card-list {
+.flower-card-list, .sighting-card-list {
     margin: 3rem 1rem;
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(3, auto);
     gap: 1rem;
 }
 
 @media (min-width: 1400px) {
-    .card-list {
+    .flower-card-list {
         grid-template-columns: repeat(5, auto);
+    }
+    .sighting-card-list {
+        grid-template-columns: repeat(4, auto);
     }
 }
 
 @media (max-width: 912px) {
-    .card-list {
+    .flower-card-list {
         grid-template-columns: repeat(3, auto);
+    }
+    .sighting-card-list {
+        grid-template-columns: repeat(2, auto);
     }
 }
 
 @media (max-width: 520px) {
-    .card-list {
+    .flower-card-list {
         grid-template-columns: repeat(2, auto);
+    }
+    .sighting-card-list {
+        grid-template-columns: repeat(1, auto);
     }
 }

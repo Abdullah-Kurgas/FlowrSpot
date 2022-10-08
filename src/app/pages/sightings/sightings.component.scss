@@ -1,0 +1,40 @@
+.title {
+    position: relative;
+    margin: 2rem;
+    text-align: center;
+    margin-top: 5rem;
+
+    .headers {
+        color: #949EA0;
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 300;
+
+        h1 {
+            font-size: 40px;
+            line-height: 40px;
+        }
+
+        span {
+            font-size: 17px;
+            line-height: 17px;
+            opacity: 0.7;
+        }
+    }
+}
+
+.new-btn {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    padding: .9rem 2rem;
+    margin: 2rem auto;
+
+
+    &:nth-of-type(2) {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(0, -50%);
+    }
+}

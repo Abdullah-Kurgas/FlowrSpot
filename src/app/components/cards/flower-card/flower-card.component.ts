@@ -12,7 +12,7 @@ import { IUser } from 'src/app/shared/models/User';
   templateUrl: './flower-card.component.html',
   styleUrls: ['./flower-card.component.scss']
 })
-export class CardComponent implements OnInit {
+export class FlowerCardComponent implements OnInit {
   @Input() flower!: IFlower;
   user!: IUser;
 

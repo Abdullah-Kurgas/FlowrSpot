@@ -35,7 +35,7 @@ export class ApiService {
     });
   }
 
-  delete(model: string, type?: string, options?: {id: number, parent_id: number}) {
+  delete(model: string, type?: string, options?: {id: number, parent_id: number | undefined}) {
     return this.http.delete(`${environment.backUrl}/api/v1/${model}${this.checkIfDataExists(options?.id)}${this.checkIfDataExists(type)}${this.checkIfDataExists(options?.parent_id)}`, {
       headers: {
         'Authorization': this.getToken()
