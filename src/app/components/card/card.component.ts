@@ -25,8 +25,8 @@ export class CardComponent implements OnInit {
 
   toggleFavorite(flower: any) {
 
-    if (this.getDataFromInsideObj(flower.favorite, flower)?.favorite) {
-      this.flowerService.removeFromFavoriteList(flower.id, this.getDataFromInsideObj(flower.favorite, flower).id).subscribe({
+    if (this.getDataFromInsideObj(flower, 'favorite')) {
+      this.flowerService.removeFromFavoriteList(flower.id, this.getDataFromInsideObj(flower, 'id')).subscribe({
         next: res => {
           this.store.dispatch(new ToggleFavorite(flower));
         },
@@ -45,8 +45,8 @@ export class CardComponent implements OnInit {
     }
   }
 
-  getDataFromInsideObj(value: any, item: any): IFlower {
-    return !value ? item?.flower : item;
+  getDataFromInsideObj(item: any, key: string) {
+    return item['flower'] ? item?.flower[key] : item[key];
   }
 
 }
