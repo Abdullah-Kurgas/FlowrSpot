@@ -1,8 +1,10 @@
 <div class="flower">
-    <div class="bg-image"></div>
+    <div class="bg-image" [style.backgroundImage]="'url('+ flower.profile_picture +')'">
+        <div class="gradient"></div>
+    </div>
 
     <div class="content">
-        <img src="../../../../assets/pl-image.png" alt="image">
+        <img [src]="flower.profile_picture" alt="image">
 
         <div class="sm-info">
 
@@ -11,11 +13,11 @@
                     <div class="favorite-icon">
                         <span class="material-symbols-outlined">star</span>
                     </div>
-                    <span class="footer">127 sightings</span>
+                    <span class="footer">{{flower.sightings}} sightings</span>
                 </div>
 
-                <h2>Ballon Flower</h2>
-                <span class="subtitle">Platycodon grandiflorus</span>
+                <h2>{{flower.name}}</h2>
+                <span class="subtitle">{{flower.latin_name}}</span>
             </div>
 
             <button class="primary-btn new-btn">
@@ -35,18 +37,7 @@
             <span>Species: P. grandiflorus</span>
         </div>
 
-        <div class="description">
-            Platycodon grandiflorus (from Ancient Greek πλατύς "wide" and κώδων "bell") is a species of herbaceous
-            flowering perennial plant of the family Campanulaceae, and the only member of the genus Platycodon. It is
-            native to East Asia (China, Korea, Japan, and the Russian Far East).[1] It is commonly known as balloon
-            flower[2][3] (referring to the balloon-shaped flower buds), Chinese bellflower,[2] or platycodon.[2]
-            <br><br>
-            Growing to 60 cm (24 in) tall by 30 cm (12 in) wide, it is an herbaceous perennial with dark green leaves
-            and blue flowers in late summer. A notable feature of the plant is the flower bud which swells like a
-            balloon before fully opening.[4] The five petals are fused together into a bell shape at the base, like its
-            relatives, the campanulas. There are varieties with white, pink and purple blooms in cultivation.[5] In
-            Korea, white flowers are more common. This plant[6] together with its cultivars 'Apoyama group'[7] and
-            'Mariesii'[8] have gained the Royal Horticultural Society's Award of Garden Merit.
+        <div class="description">{{flower.description}}
         </div>
 
     </div>

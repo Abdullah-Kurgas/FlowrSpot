@@ -12,6 +12,10 @@ export class FlowerService {
     return this.apiService.get('flowers', undefined, '');
   }
 
+  getFlowerDetail(id: number) {
+    return this.apiService.get('flowers', id);
+  }
+
   getFlowerFavoriteList() {
     return this.apiService.get('flowers', undefined, 'favorites');
   }
