@@ -1,19 +1,44 @@
 <div class="header">
-    <div class="logo-sec" [routerLink]="''">
-        <img src="../../../assets/flower 1.png" alt="logo">
-        <h2 class="text-accent">FlowrSpot</h2>
-    </div>
-    <div class="navbar">
-
-        <div class="list" *ngIf="apiService.isDesktopMode">
-            <span class="item" [routerLink]="['/flowers']">Flowers</span>
-            <span class="item" [routerLink]="['/sightings']">Latest Sightings</span>
-            <span class="item" [routerLink]="['/favorites']">Favorites</span>
-            <div *ngIf="!user">
-                <span class="item text-accent" (click)="modalService.open('modal', 'login')">Login</span>
-                <span class="item primary-rounded-btn" (click)="modalService.open('modal', 'register')">New Account</span>
+    <div class="top">
+        <div class="logo-sec" [routerLink]="''" (click)="navigate('')">
+            <img src="../../../assets/flower 1.png" alt="logo">
+            <h2 class="text-accent">FlowrSpot</h2>
+        </div>
+        <div class="navbar">
+    
+            <div class="list" *ngIf="apiService.isDesktopMode">
+                <span class="item" (click)="navigate('flowers')">Flowers</span>
+                <span class="item" (click)="navigate('sightings')">Latest Sightings</span>
+                <span class="item" (click)="navigate('favorites')">Favorites</span>
+                <div *ngIf="!user">
+                    <span class="item text-accent" (click)="modalService.open('modal', 'login')">Login</span>
+                    <span class="item primary-rounded-btn" (click)="modalService.open('modal', 'register')">New Account</span>
+                </div>
+    
+                <div class="profile-header" *ngIf="user">
+                    <span class="item">{{user.first_name}} {{user.last_name}}</span>
+                    <div (click)="modalService.open('info', 'profile')">
+                        <img src="../../../assets/menu_profile_holder.png" alt="profile-sm-img">
+                    </div>
+                </div>
             </div>
+    
+            <span class="material-symbols-outlined icon" *ngIf="!apiService.isDesktopMode" (click)="expanded = !expanded">{{expanded ? 'close' : 'menu'}}</span>
+        </div>
+    </div>
 
+    <div class="mobile-list" *ngIf="!apiService.isDesktopMode && expanded" >
+        <div class="list">
+
+            <span class="item" (click)="navigate('flowers')">Flowers</span>
+            <span class="item" (click)="navigate('sightings')">Latest Sightings</span>
+            <span class="item" (click)="navigate('favorites')">Favorites</span>
+    
+            <div class="sign-btns" *ngIf="!user">
+                <span class="item text-accent" (click)="modalService.open('modal', 'login')" (click)="expanded = false">Login</span>
+                <span class="item primary-rounded-btn" (click)="modalService.open('modal', 'register')" (click)="expanded = false">New Account</span>
+            </div>
+    
             <div class="profile-header" *ngIf="user">
                 <span class="item">{{user.first_name}} {{user.last_name}}</span>
                 <div (click)="modalService.open('info', 'profile')">
@@ -21,7 +46,5 @@
                 </div>
             </div>
         </div>
-
-        <span class="material-symbols-outlined icon" *ngIf="!apiService.isDesktopMode">menu</span>
     </div>
 </div>

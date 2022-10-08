@@ -23,7 +23,7 @@ body {
 
 .primary-rounded-btn {
     color: #ffffff !important;
-    padding: .7rem 1.5rem;
+    padding: .8rem 1.5rem !important;
     margin: 0 !important;
     background: $primary-bg-color;
     box-shadow: $primary-shadow;
@@ -42,7 +42,7 @@ body {
 .input-search-group {
     font-family: 'Ubuntu';
     position: relative;
-    width: 600px;
+    width: 65vw;
     margin: 1rem auto;
 
     input {
@@ -68,6 +68,19 @@ body {
         color: $primary-color;
     }
 }
+
+@media (max-width: 500px) {
+    .input-search-group {
+        input {
+            font-size: 13px !important;
+        }
+        
+        span {
+            font-size: 20px;
+        }
+    }
+}
+
 
 // Custom form inputs with floating label
 .form-input {

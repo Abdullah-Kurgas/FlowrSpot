@@ -1,56 +1,88 @@
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: .5rem 1rem;
     background: #FFFFFF;
-    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.05);
-    user-select: none;
+    height: 100%;
 
-    .logo-sec {
+    .top {
         display: flex;
         align-items: center;
-        cursor: pointer;
+        justify-content: space-between;
+        padding: .5rem 1rem;
+        box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.05);
+        user-select: none;
 
-        h2 {
-            padding: 0 .5rem;
-        }
-    }
-
-    .navbar {
-        .list {
+        .logo-sec {
             display: flex;
             align-items: center;
+            cursor: pointer;
 
-            .item {
-                margin: 0 1.5rem;
-                cursor: pointer;
+            h2 {
+                padding: 0 .5rem;
             }
+        }
 
-            .profile-header {
+        .navbar {
+            .list {
                 display: flex;
                 align-items: center;
 
-                span {
-                    cursor: unset;
-                }
-
-                img {
+                .item {
+                    margin: 0 1.5rem;
                     cursor: pointer;
                 }
+
+            }
+
+            .icon {
+                font-size: 2rem;
+                cursor: pointer;
             }
 
         }
+    }
 
-        .item,
-        .icon {
-            color: #949EA0;
+    .mobile-list {
+        background: #ffffff;
+        position: absolute;
+        z-index: 100;
+        left: 0;
+        right: 0;
+        top: 5rem;
+        bottom: 0;
+        overflow: auto;
+
+        .list {
+            margin-top: 4rem;
+            display: flex;
+            flex-direction: column;
         }
 
-        .icon {
-            font-size: 2rem;
+        .item {
+            margin: 2rem!important;
+        }
+
+        .sign-btns {
+            display: flex;
+            flex-direction: column !important;
+            width: fit-content;
+        }
+    }
+
+    .profile-header {
+        display: flex;
+        align-items: center;
+
+        span {
+            cursor: unset;
+        }
+
+        img {
             cursor: pointer;
         }
-
     }
+
+    .item,
+    .icon {
+        color: #949EA0;
+    }
+
 }
