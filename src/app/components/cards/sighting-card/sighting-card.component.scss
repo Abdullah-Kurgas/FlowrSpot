@@ -1,0 +1,97 @@
+.sighting {
+    position: relative;
+    background: #FFFFFF;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+    width: 280px;
+    height: 500px;
+    color: #949EA0;
+    margin: 10px;
+
+    .icon {
+        margin-right: .4rem;
+        font-size: 19px !important;
+    }
+
+    .location {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        font-weight: 400;
+        font-size: 12px;
+        color: #DF9186;
+        background: #FFFFFF;
+        box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.05);
+        border-radius: 20px;
+        padding: .2rem .7rem;
+        margin: 1rem;
+    }
+
+    .bg-image {
+        background: url(../../../assets/pl-image.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 300px;
+    }
+
+    .content {
+        padding: 1rem;
+        
+        .uploaded-by {
+            display: flex;
+            align-items: center;
+
+            img {
+                width: 40px;
+                height: 40px;
+                margin-right: 1rem;
+            }
+
+            .name {
+                font-weight: 400;
+                line-height: 15px;
+                color: #334144;
+            }
+
+            .user-name {
+                font-family: 'Ubuntu';
+                font-style: italic;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 12px;
+            }
+        }
+
+        .description {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 15px;
+            text-align: justify;
+            letter-spacing: 0.075em;
+            border-bottom: 1px solid #E8E9ED;
+            padding: .4rem 0;
+            margin: 1rem 0;
+        }
+
+        .info {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 12px;
+            display: flex;
+            align-items: center;
+
+            .comments {
+                display: flex;
+                align-items: center;
+            }
+
+            .likes {
+                display: flex;
+                align-items: center;
+                margin-left: .8rem;
+            }
+        }
+    }
+}

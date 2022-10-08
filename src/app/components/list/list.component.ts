@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class ListComponent implements OnInit {
   @Input() dataList!: Observable<any[]>;
+  @Input() dataType!: string;
 
   constructor() { }
 

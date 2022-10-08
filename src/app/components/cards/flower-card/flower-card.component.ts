@@ -3,14 +3,14 @@ import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/appState';
 import { ToggleFlower } from 'src/app/shared/actions/flowerAction';
 import { ToggleFavorite } from 'src/app/shared/actions/favoriteAction';
-import { IFavorite, IFlower } from 'src/app/shared/models/Flower';
+import { IFlower } from 'src/app/shared/models/Flower';
 import { FlowerService } from 'src/app/shared/services/flower.service';
 import { IUser } from 'src/app/shared/models/User';
 
 @Component({
-  selector: 'fs-card',
-  templateUrl: './card.component.html',
-  styleUrls: ['./card.component.scss']
+  selector: 'fs-flower-card',
+  templateUrl: './flower-card.component.html',
+  styleUrls: ['./flower-card.component.scss']
 })
 export class CardComponent implements OnInit {
   @Input() flower!: IFlower;

@@ -1,5 +1,13 @@
 <div class="list">
     <div class="card-list">
-        <fs-card *ngFor="let flower of dataList | async" [flower]="flower"></fs-card>
+
+        <ng-container *ngIf="dataType == 'flowers'">
+            <fs-flower-card *ngFor="let flower of dataList | async" [flower]="flower"></fs-flower-card>
+        </ng-container>
+
+        <ng-container *ngIf="dataType == 'sightings'">
+            <fs-sighting-card *ngFor="let sighting of dataList | async" [sighting]="sighting"></fs-sighting-card>
+        </ng-container>
+
     </div>
 </div>
