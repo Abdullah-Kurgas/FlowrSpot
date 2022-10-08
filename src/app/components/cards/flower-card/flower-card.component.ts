@@ -6,6 +6,7 @@ import { ToggleFavorite } from 'src/app/shared/actions/favoriteAction';
 import { IFlower } from 'src/app/shared/models/Flower';
 import { FlowerService } from 'src/app/shared/services/flower.service';
 import { IUser } from 'src/app/shared/models/User';
+import { Utils } from 'src/app/shared/Utils';
 
 @Component({
   selector: 'fs-flower-card',
@@ -16,6 +17,8 @@ export class FlowerCardComponent implements OnInit {
   @Input() flower!: IFlower;
   user!: IUser;
 
+  utils = Utils;
+
   constructor(private store: Store<AppState>, private flowerService: FlowerService) {
     store.select(state => state.user).subscribe(user => this.user = user);
   }
@@ -23,10 +26,11 @@ export class FlowerCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  toggleFavorite(flower: any) {
+  toggleFavorite(e: Event, flower: any) {
+    e.stopPropagation();
 
-    if (this.getDataFromInsideObj(flower, 'favorite')) {
-      this.flowerService.removeFromFavoriteList(flower.id, this.getDataFromInsideObj(flower, 'id')).subscribe({
+    if (this.utils.getDataFromInsideObj(flower, 'favorite')) {
+      this.flowerService.removeFromFavoriteList(flower.id, this.utils.getDataFromInsideObj(flower, 'id')).subscribe({
         next: res => {
           this.store.dispatch(new ToggleFavorite(flower));
         },
@@ -43,10 +47,6 @@ export class FlowerCardComponent implements OnInit {
         error: err => console.error(err)
       })
     }
-  }
-
-  getDataFromInsideObj(item: any, key: string) {
-    return item['flower'] ? item?.flower[key] : item[key];
   }
 
 }

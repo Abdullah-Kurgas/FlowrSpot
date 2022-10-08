@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { Utils } from 'src/app/shared/Utils';
 
 @Component({
   selector: 'fs-list',
@@ -10,9 +12,15 @@ export class ListComponent implements OnInit {
   @Input() dataList!: Observable<any[]>;
   @Input() dataType!: string;
 
-  constructor() { }
+  utils = Utils;
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  navigateToDetails(model: string, id: number) {
+    this.router.navigate([model, id]);
   }
 
 }

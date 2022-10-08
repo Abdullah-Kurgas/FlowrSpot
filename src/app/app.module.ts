@@ -21,6 +21,7 @@ import { favoriteReducer } from './shared/reducers/favoriteReducer';
 import { SightingsComponent } from './pages/sightings/sightings.component';
 import { SightingCardComponent } from './components/cards/sighting-card/sighting-card.component';
 import { sightingReducer } from './shared/reducers/sightingReducer';
+import { FlowerDetailComponent } from './pages/flowers/flower-detail/flower-detail.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { sightingReducer } from './shared/reducers/sightingReducer';
     ListComponent,
     SightingsComponent,
     SightingCardComponent,
+    FlowerDetailComponent,
   ],
   imports: [
     BrowserModule,

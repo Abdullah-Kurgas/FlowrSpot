@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { AppState } from 'src/app/appState';
@@ -12,6 +12,7 @@ import { SightingService } from 'src/app/shared/services/sighting.service';
   styleUrls: ['./sightings.component.scss']
 })
 export class SightingsComponent implements OnInit {
+  @Input() listType: string = 'all';
   sightings!: Observable<ISighting[]>;
 
   constructor(private sightingService: SightingService, private store: Store<AppState>) {
