@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { AppState } from 'src/app/appState';
 import { Logout } from 'src/app/shared/actions/authAction';
-import { User } from 'src/app/shared/models/User';
+import { IUser } from 'src/app/shared/models/User';
 import { ModalsService } from 'src/app/shared/services/modals.service';
 
 @Component({
@@ -12,7 +12,7 @@ import { ModalsService } from 'src/app/shared/services/modals.service';
   styleUrls: ['./info-modal.component.scss']
 })
 export class InfoModalComponent implements OnInit {
-  profiles: Observable<User[]>;
+  profiles: Observable<IUser[]>;
 
   @Input() type!: string;
 

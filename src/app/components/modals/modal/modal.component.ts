@@ -40,8 +40,9 @@ export class ModalComponent implements OnInit {
         } else {
           this.store.dispatch(new Login(user));
         }
+
         user = new User();
-        this.modalService.close();
+        this.modalService.open('info', 'message');
       },
       error: err => console.error(err)
     });

@@ -1,7 +1,7 @@
 <div class="modal-bg">
 
     <div class="modal" for *ngFor="let item of profiles | async">
-        <span class="material-symbols-outlined close-btn" (click)="modalService.close()">close</span>
+        <span class="material-symbols-outlined close-btn" *ngIf="type !== 'message'" (click)="modalService.close()">close</span>
 
         <div class="profile" *ngIf="type == 'profile'" >
             <div class="sm-info">
@@ -33,6 +33,10 @@
                     <span>michael.berry@gmail.com</span>
                 </div>
             </div>
+        </div>
+
+        <div class="message" *ngIf="type == 'message'">
+            <h3>Congratulations! You have successfully {{item.id ? 'logged into': 'signed up for'}} FlowrSpot!</h3>
         </div>
 
         <div class="settings"  *ngIf="type == 'settings'">
@@ -68,6 +72,12 @@
 
         <div class="logout-btn">
             <button class="primary-btn" *ngIf="type == 'profile'" (click)="userLogout()">Logout</button>
+
+            <div *ngIf="type == 'message'">
+                <button class="primary-btn" (click)="item.id ? modalService.close() : modalService.open('modal', 'login')">Ok</button>
+                <button class="primary-btn" *ngIf=" item.id" (click)="modalService.open('info', 'profile')">Profile</button>
+            </div>
+
             <button class="primary-btn" *ngIf="type == 'settings'">Save settings</button>
         </div>
 
