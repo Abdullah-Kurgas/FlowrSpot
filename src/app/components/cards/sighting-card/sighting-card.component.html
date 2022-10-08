@@ -3,30 +3,28 @@
         <span class="material-symbols-outlined icon">location_on</span>
         <span>San Francisco, US</span>
     </div>
-    <div class="bg-image"></div>
+    <div class="bg-image" [style.backgroundImage]="'url('+ sighting.picture +')'"></div>
 
     <div class="content">
 
         <div class="uploaded-by">
             <img src="../../../assets/profile-holder.png" alt="uploaded-by">
             <div>
-                <div class="name">Balcony Flower</div>
-                <span class="user-name">by Adam Moore</span>
+                <div class="name">{{sighting.flower.name}}</div>
+                <span class="user-name">by {{sighting.user.full_name}}</span>
             </div>
         </div>
 
-        <div class="description">
-            Platycodon grandiflorus (from Ancient Greek πλατύς "wide" and κώδων "bell") is a species of herbaceous flowering perennial plant of the …
-        </div>
+        <div class="description">{{sighting.description}}</div>
 
         <div class="info">
             <div class="comments">
                 <span class="material-symbols-outlined icon">chat</span>
-                <span>18 Comments</span>
+                <span>{{sighting.comments_count}} Comments</span>
             </div>
             <div class="likes">
                 <span class="material-symbols-outlined icon">favorite</span>
-                <span>12 Favorites</span>
+                <span>{{sighting.likes_count}} Favorites</span>
             </div>
         </div>
     </div>

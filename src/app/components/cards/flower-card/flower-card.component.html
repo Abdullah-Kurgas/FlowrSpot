@@ -1,10 +1,12 @@
-<div class="card">
-    <div class="favorite-icon" *ngIf="user?.id" [ngClass]="{'bg-primary': getDataFromInsideObj(flower, 'favorite')}" (click)="toggleFavorite(flower)">
-        <span class="material-symbols-outlined">star</span>
-    </div>
-    <div class="content">
-        <span class="title">{{getDataFromInsideObj(flower, 'name')}}</span>
-        <span class="subtitle">{{getDataFromInsideObj(flower, 'latin_name')}}</span>
-        <span class="footer" [ngClass]="{'bg-primary': getDataFromInsideObj(flower, 'favorite')}">{{getDataFromInsideObj(flower, 'sightings')}} sightings</span>
+<div class="card" [style.backgroundImage]="'url('+ getDataFromInsideObj(flower, 'profile_picture') +')'">
+    <div class="gradient">
+        <div class="favorite-icon" *ngIf="user?.id" [ngClass]="{'bg-primary': getDataFromInsideObj(flower, 'favorite')}" (click)="toggleFavorite(flower)">
+            <span class="material-symbols-outlined">star</span>
+        </div>
+        <div class="content">
+            <span class="title">{{getDataFromInsideObj(flower, 'name')}}</span>
+            <span class="subtitle">{{getDataFromInsideObj(flower, 'latin_name')}}</span>
+            <span class="footer" [ngClass]="{'bg-primary': getDataFromInsideObj(flower, 'favorite')}">{{getDataFromInsideObj(flower, 'sightings')}} sightings</span>
+        </div>
     </div>
 </div>
