@@ -1,5 +1,5 @@
 <div class="card">
-    <div class="favorite-icon" [ngClass]="{'bg-primary': getDataFromInsideObj(flower.favorite, flower)?.favorite}" (click)="toggleFavorite(flower)">
+    <div class="favorite-icon" *ngIf="user?.id" [ngClass]="{'bg-primary': getDataFromInsideObj(flower.favorite, flower)?.favorite}" (click)="toggleFavorite(flower)">
         <span class="material-symbols-outlined">star</span>
     </div>
     <div class="content">

@@ -5,8 +5,7 @@ import { AuthToken, Login, Register } from 'src/app/shared/actions/authAction';
 import { ModalsService } from 'src/app/shared/services/modals.service';
 import { IUser, User } from 'src/app/shared/models/User';
 import { AuthService } from 'src/app/shared/services/auth.service';
-import { mergeMap, tap } from 'rxjs';
-import { ApiService } from 'src/app/shared/services/api.service';
+import { mergeMap } from 'rxjs';
 
 @Component({
   selector: 'fs-modal',
@@ -14,11 +13,11 @@ import { ApiService } from 'src/app/shared/services/api.service';
   styleUrls: ['./modal.component.scss']
 })
 export class ModalComponent implements OnInit {
-  user: User = new User();
+  user: IUser = new User();
 
   @Input() type!: string;
 
-  constructor(public modalService: ModalsService, private store: Store<AppState>, private authService: AuthService, private apiService: ApiService) { }
+  constructor(public modalService: ModalsService, private store: Store<AppState>, private authService: AuthService) { }
 
   ngOnInit(): void {
   }
