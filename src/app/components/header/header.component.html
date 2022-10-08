@@ -4,7 +4,8 @@
         <h2 class="text-accent">FlowrSpot</h2>
     </div>
     <div class="navbar">
-        <div class="list">
+
+        <div class="list" *ngIf="apiService.isDesktopMode">
             <span class="item" [routerLink]="['/flowers']">Flowers</span>
             <span class="item" [routerLink]="['/sightings']">Latest Sightings</span>
             <span class="item" [routerLink]="['/favorites']">Favorites</span>
@@ -21,6 +22,6 @@
             </div>
         </div>
 
-        <!-- <span class="material-symbols-outlined icon">menu</span> -->
+        <span class="material-symbols-outlined icon" *ngIf="!apiService.isDesktopMode">menu</span>
     </div>
 </div>
