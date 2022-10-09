@@ -8,8 +8,8 @@ export class FlowerService {
 
   constructor(private apiService: ApiService) { }
 
-  getFlowerList() {
-    return this.apiService.get('flowers', undefined, '');
+  getFlowerList(id?: number, type: string = '') {
+    return this.apiService.get('flowers', id, type);
   }
 
   getFlowerDetail(id: number) {

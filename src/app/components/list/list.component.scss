@@ -5,6 +5,12 @@
     gap: 1rem;
 }
 
+.no-data-text {
+    text-align: center;
+    margin: 3rem;
+    color: #949EA0;
+}
+
 @media (min-width: 1400px) {
     .flower-card-list {
         grid-template-columns: repeat(5, auto);
