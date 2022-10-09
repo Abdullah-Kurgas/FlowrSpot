@@ -1,3 +1,7 @@
+export class Comment {
+    content?: string;
+}
+
 export interface IComment {
     id: number;
     user_id: number;

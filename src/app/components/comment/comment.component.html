@@ -17,10 +17,10 @@
 
     <div class="comment-form">
         <div class="form-input">
-            <textarea type="text" name="comment" id="comment" placeholder=" " rows="6"></textarea>
+            <textarea type="text" name="comment" id="comment" placeholder=" " rows="6" [(ngModel)]="content"></textarea>
             <label for="comment">Write a comment...</label>
         </div>
-        <button class="primary-btn">Publish Comment</button>
+        <button class="primary-btn" (click)="createComment()" type="submit">Publish Comment</button>
     </div>
 
 </div>

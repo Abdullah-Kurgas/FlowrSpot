@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IComment } from '../models/Comment';
-import { Sighting } from '../models/Sighting';
+import { Comment } from '../models/Comment';
 import { ApiService } from './api.service';
 
 @Injectable({
@@ -31,7 +30,7 @@ export class SightingService {
     return this.apiService.get('sightings', sighting_id, 'comments');
   }
 
-  createComment(data: IComment, sighting_id: number) {
+  createComment(data: Comment, sighting_id: number) {
     return this.apiService.post('sightings', 'comments', data, sighting_id);
   }
 }

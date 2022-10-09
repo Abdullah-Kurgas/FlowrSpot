@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { IComment } from 'src/app/shared/models/Comment';
+import { SightingService } from 'src/app/shared/services/sighting.service';
 
 @Component({
   selector: 'fs-comment',
@@ -8,10 +10,21 @@ import { IComment } from 'src/app/shared/models/Comment';
 })
 export class CommentComponent implements OnInit {
   @Input() comments?: IComment[];
+  content: string = '';
 
-  constructor() { }
+  constructor(private sightingService: SightingService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+  }
+
+  createComment() {
+    this.sightingService.createComment({ content: this.content }, this.route.snapshot.params['id']).subscribe({
+      next: ({comment}: any) => {
+        this.comments?.push(comment);
+        this.content = '';
+      },
+      error: err => console.error(err)
+    });
   }
 
 }
