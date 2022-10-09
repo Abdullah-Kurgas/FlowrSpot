@@ -7,6 +7,7 @@
     color: #949EA0;
     margin: 10px;
 
+    // class for horizontal card view (cardType = 'horizontal')
     &.hr-card {
         display: grid;
         grid-template-columns: 300px auto;
@@ -91,6 +92,11 @@
                 font-style: italic;
                 font-weight: 400;
                 font-size: 12px;
+
+                &:hover {
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
             }
         }
 

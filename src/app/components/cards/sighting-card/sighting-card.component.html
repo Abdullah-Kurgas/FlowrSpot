@@ -11,7 +11,8 @@
             <img src="../../../assets/profile-holder.png" alt="uploaded-by">
             <div>
                 <div class="name">{{sighting?.flower?.name }}</div>
-                <span class="user-name">by {{sighting?.user?.full_name}}</span>
+                <span class="user-name" [routerLink]="'/user/'+ sighting?.user?.id">by
+                    {{sighting?.user?.full_name}}</span>
             </div>
         </div>
 
