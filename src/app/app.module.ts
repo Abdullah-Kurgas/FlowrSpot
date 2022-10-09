@@ -24,6 +24,7 @@ import { sightingReducer } from './shared/reducers/sightingReducer';
 import { FlowerDetailComponent } from './pages/flowers/flower-detail/flower-detail.component';
 import { SightingDetailComponent } from './pages/sightings/sighting-detail/sighting-detail.component';
 import { CommentComponent } from './components/comment/comment.component';
+import { SightingCreateComponent } from './pages/sightings/sighting-create/sighting-create.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { CommentComponent } from './components/comment/comment.component';
     FlowerDetailComponent,
     SightingDetailComponent,
     CommentComponent,
+    SightingCreateComponent
   ],
   imports: [
     BrowserModule,

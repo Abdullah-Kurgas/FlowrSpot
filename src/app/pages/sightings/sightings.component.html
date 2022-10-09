@@ -5,7 +5,7 @@
             <span>Explore between more than 8.427 sightings</span>
         </div>
 
-        <button class="primary-btn btn-top">
+        <button class="primary-btn btn-top" routerLink="/sighting/create">
             <span class="material-symbols-outlined">add</span>
             <span>Add New Sighting</span>
         </button>
@@ -13,7 +13,7 @@
 
     <fs-list [dataList]="sightings" [dataType]="'sightings'"></fs-list>
 
-    <button class="primary-btn" *ngIf="listType == 'all'">
+    <button class="primary-btn" *ngIf="listType == 'all'" routerLink="/sighting/create">
         <span class="material-symbols-outlined">add</span>
         <span>Add New Sighting</span>
     </button>

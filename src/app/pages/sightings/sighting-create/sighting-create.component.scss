@@ -1,0 +1,67 @@
+.create {
+    position: relative;
+
+    .bg-image {
+        position: absolute;
+        width: 100%;
+        height: 350px;
+        background: linear-gradient(180deg, rgba(249, 249, 249, 0.0001) 0%, #F9F9F9 100%), url(../../../../assets/Map.png);
+    }
+
+    .content {
+        position: relative;
+        padding-top: 10rem;
+
+        .actions {
+            display: flex;
+            justify-content: end;
+            margin: 2rem 3.3rem;
+        }
+
+        .content-form {
+            position: relative;
+            background: #FFFFFF;
+            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.05);
+            border-radius: 3px;
+            padding: 2rem;
+            color: #949EA0;
+            margin: 15px;
+
+            .title {
+                text-align: center;
+                margin-bottom: 3rem;
+            }
+
+            .content-body {
+
+                .image-inputs {
+                    display: grid;
+                    grid-template-columns: 50% auto auto;
+                    align-items: center;
+
+                    .photo-input {
+                        position: relative;
+                        margin: 0 10px;
+                        
+                        label {
+                            float: right;
+                        }
+
+                        input {
+                            width: 0;
+                            opacity: 0;
+                            position: absolute;
+                            top: 0;
+                        }
+                    }
+                }
+            }
+
+            .create-btn {
+                display: flex;
+                justify-content: flex-end;
+                margin: 1.5rem 10px;
+            }
+        }
+    }
+}
