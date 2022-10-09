@@ -7,6 +7,10 @@
     color: #949EA0;
     margin: 10px;
 
+    &:hover {
+        box-shadow: 0px 15px 30px #0000003b;
+    }
+
     // class for horizontal card view (cardType = 'horizontal')
     &.hr-card {
         display: grid;

@@ -8,6 +8,10 @@
     text-align: center;
     color: #ffffff;
 
+    &:hover {
+        box-shadow: 0px 15px 30px #0000003b;
+    }
+
     .gradient {
         background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.7) 89.5%);
         height: 100%;
