@@ -33,6 +33,10 @@ body {
 .primary-btn {
     color: #ffffff !important;
     border: none;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    padding: .9rem 2rem;
     background: $primary-bg-color;
     box-shadow: $primary-shadow;
     border-radius: 3px;

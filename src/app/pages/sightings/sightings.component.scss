@@ -22,23 +22,20 @@
         }
     }
 }
-
-.new-btn, .new-btn-top {
-    width: fit-content;
-    display: flex;
-    align-items: center;
-    padding: .9rem 2rem;
-    margin: 2rem auto;
-}
-.new-btn-top {
+.btn-top {
     position: absolute;
     top: 0;
     right: 0;
     transform: translate(0, -50%);
 }
 
+button {
+    align-items: center;
+    margin: 2rem auto;
+}
+
 @media (max-width: 1090px) {
-    .new-btn-top {
+    .btn-top {
         display: none;
         color: blue !important;
     }   
