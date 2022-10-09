@@ -22,6 +22,7 @@ import { SightingsComponent } from './pages/sightings/sightings.component';
 import { SightingCardComponent } from './components/cards/sighting-card/sighting-card.component';
 import { sightingReducer } from './shared/reducers/sightingReducer';
 import { FlowerDetailComponent } from './pages/flowers/flower-detail/flower-detail.component';
+import { SightingDetailComponent } from './pages/sightings/sighting-detail/sighting-detail.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { FlowerDetailComponent } from './pages/flowers/flower-detail/flower-deta
     SightingsComponent,
     SightingCardComponent,
     FlowerDetailComponent,
+    SightingDetailComponent,
   ],
   imports: [
     BrowserModule,

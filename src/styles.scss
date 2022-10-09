@@ -92,7 +92,7 @@ body {
     user-select: none;
 
     label,
-    input {
+    input, textarea {
         transition: all 0.2s;
         touch-action: manipulation;
         font-size: 18px;
@@ -107,7 +107,7 @@ body {
 
     }
 
-    input {
+    input, textarea {
         background: #F5F6F7;
         border: 1px solid #DFE5EA;
         border-radius: 3px;

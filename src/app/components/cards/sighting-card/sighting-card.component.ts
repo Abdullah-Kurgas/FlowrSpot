@@ -8,6 +8,7 @@ import { ISighting } from 'src/app/shared/models/Sighting';
 })
 export class SightingCardComponent implements OnInit {
   @Input() sighting!: ISighting;
+  @Input() cardType: string = 'vertical';
 
   constructor() { }
 

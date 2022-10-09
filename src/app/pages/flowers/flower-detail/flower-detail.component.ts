@@ -18,8 +18,6 @@ export class FlowerDetailComponent implements OnInit {
   ngOnInit(): void {
     this.flowerService.getFlowerDetail(this.route.snapshot.params['id']).subscribe({
       next: ({ flower }: any) => {
-        console.log(flower);
-        
         this.flower = flower;
       },
       error: err => console.error(err)

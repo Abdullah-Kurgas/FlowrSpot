@@ -7,6 +7,39 @@
     color: #949EA0;
     margin: 10px;
 
+    &.hr-card {
+        display: grid;
+        grid-template-columns: 300px auto;
+        align-items: center;
+        margin: 0 1rem;
+        padding: 2rem;
+        height: 100%;
+
+        .bg-image {
+            border-radius: 3px;
+        }
+
+        .content {
+            margin: 0 2rem;
+        }
+
+        .location {
+            display: none;
+        }
+
+        img {
+            width: 50px !important;
+            height: 50px !important;
+        }
+
+        .name {
+            font-size: 25px;
+        }
+        .user-name {
+            font-size: 14px;
+        }
+    }
+
     .icon {
         margin-right: .4rem;
         font-size: 19px !important;
@@ -30,6 +63,7 @@
     .bg-image {
         background-repeat: no-repeat;
         background-size: cover;
+        background-position: center;
         height: 300px;
     }
 
@@ -53,11 +87,9 @@
             }
 
             .user-name {
-                font-family: 'Ubuntu';
                 font-style: italic;
                 font-weight: 400;
                 font-size: 12px;
-                line-height: 12px;
             }
         }
 
