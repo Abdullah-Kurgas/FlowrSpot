@@ -2,8 +2,7 @@
 
 $primary-bg-color: linear-gradient(270deg, #ECBCB3 0%, #EAA79E 100%);
 $primary-color: #EAA79E;
-$primary-shadow: 0px 15px 20px rgba(234, 168, 159, 0.2);;
-
+$primary-shadow: 0px 15px 20px rgba(234, 168, 159, 0.2);
 
 body {
     margin: 0;
@@ -30,7 +29,7 @@ body {
     border-radius: 50px;
 }
 
-.primary-btn {
+.primary-btn, .primary-btn-outline {
     color: #ffffff !important;
     border: none;
     width: fit-content;
@@ -41,6 +40,12 @@ body {
     box-shadow: $primary-shadow;
     border-radius: 3px;
     cursor: pointer;
+}
+
+.primary-btn-outline {
+    color: $primary-color !important;
+    background: #ffffff;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.05);
 }
 
 .input-search-group {
