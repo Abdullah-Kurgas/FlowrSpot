@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Sighting } from 'src/app/shared/models/Sighting';
+import { ISighting, Sighting } from 'src/app/shared/models/Sighting';
 
 @Component({
   selector: 'fs-sighting-card',
@@ -7,7 +7,7 @@ import { Sighting } from 'src/app/shared/models/Sighting';
   styleUrls: ['./sighting-card.component.scss']
 })
 export class SightingCardComponent implements OnInit {
-  @Input() sighting!: Sighting;
+  @Input() sighting?: ISighting;
   @Input() cardType: string = 'vertical';
 
   constructor() { }

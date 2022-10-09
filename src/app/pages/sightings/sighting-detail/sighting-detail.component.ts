@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Store } from '@ngrx/store';
 import { mergeMap } from 'rxjs';
-import { AppState } from 'src/app/appState';
 import { IComment } from 'src/app/shared/models/Comment';
-import { ISighting, Sighting } from 'src/app/shared/models/Sighting';
+import { ISighting } from 'src/app/shared/models/Sighting';
 import { SightingService } from 'src/app/shared/services/sighting.service';
 
 @Component({
@@ -13,10 +11,10 @@ import { SightingService } from 'src/app/shared/services/sighting.service';
   styleUrls: ['./sighting-detail.component.scss']
 })
 export class SightingDetailComponent implements OnInit {
-  sighting: Sighting = new Sighting();
+  sighting?: ISighting;
   comments!: IComment[];
 
-  constructor(private sightingService: SightingService, private store: Store<AppState>, private route: ActivatedRoute) { }
+  constructor(private sightingService: SightingService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.sightingService.getSightingInfo(this.route.snapshot.params['id'])

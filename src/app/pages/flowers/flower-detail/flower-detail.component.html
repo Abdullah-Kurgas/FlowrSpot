@@ -20,7 +20,7 @@
                 <span class="subtitle">{{flower.latin_name}}</span>
             </div>
 
-            <button class="primary-btn" [routerLink]="'/sighting/create'">
+            <button class="primary-btn" [routerLink]="'/flower/'+ route.snapshot.params['id']+ '/sighting-create'">
                 <span class="material-symbols-outlined">add</span>
                 <span>Add New Sighting</span>
             </button>

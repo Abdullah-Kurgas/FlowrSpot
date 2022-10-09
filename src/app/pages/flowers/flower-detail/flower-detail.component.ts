@@ -13,7 +13,7 @@ import { FlowerService } from 'src/app/shared/services/flower.service';
 export class FlowerDetailComponent implements OnInit {
   flower: Flower = new Flower();
 
-  constructor(private flowerService: FlowerService, private store: Store<AppState>, private route: ActivatedRoute) { }
+  constructor(private flowerService: FlowerService, private store: Store<AppState>, public route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.flowerService.getFlowerDetail(this.route.snapshot.params['id']).subscribe({

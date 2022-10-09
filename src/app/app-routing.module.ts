@@ -14,10 +14,8 @@ const routes: Routes = [
   { path: 'sightings', component: SightingsComponent },
   { path: 'favorites', component: FavoriteComponent },
   { path: 'flower/:id', component: FlowerDetailComponent },
-  { path: 'sighting', children: [
-    { path: 'create', component: SightingCreateComponent },
-    { path: ':id', component: SightingDetailComponent }
-  ] }
+  { path: 'sighting/:id', component: SightingDetailComponent },
+  { path: 'flower/:id/sighting-create', component: SightingCreateComponent },
 ];
 
 @NgModule({

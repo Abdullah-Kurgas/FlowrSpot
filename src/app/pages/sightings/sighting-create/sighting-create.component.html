@@ -6,7 +6,7 @@
             <button class="primary-btn">View on Google Maps</button>
         </div>
 
-        <div class="content-form">
+        <form [formGroup]="form" fo class="content-form" (submit)="createSighting()">
             <div class="title">
                 <h1>Discover flowers around you</h1>
                 <span>Explore between more than 8.427 sightings</span>
@@ -16,32 +16,32 @@
                 <div class="image-inputs">
 
                     <div class="form-input">
-                        <input type="text" name="title" id="email" placeholder=" ">
-                        <label for="title">Title of the sighting</label>
+                        <input type="text" name="name" formControlName="name" id="name" placeholder=" ">
+                        <label for="name">Title of the sighting</label>
                     </div>
 
                     <div class="form-input">
-                        <input type="text" name="cordinates" id="cordinates" placeholder=" ">
-                        <label for="cordinates">Coordinates of the sighting</label>
+                        <input type="text" name="cordinates" id="cordinates" placeholder="(longitude, latitude)" (change)="manageCordinates($event)">
+                        <label for="cordinates">Coordinates of the sighting </label>
                     </div>
 
                     <div class="photo-input">
                         <label for="picture" class="primary-btn-outline">
-                            <span class="material-symbols-outlined">add_a_photo</span>
-                            <p>Add a Photo</p>
+                            <span class="material-symbols-outlined">{{photoFile ? 'image' : 'add_a_photo'}}</span>
+                            <p>{{ photoFile?.name ?? 'Add a Photo'}}</p>
                         </label>
-                        <input type="file" id="picture">
+                        <input type="file" id="picture" (change)="onPhotoChange($event)">
                     </div>
                 </div>
 
                 <div class="form-input">
-                    <textarea type="text" name="description" id="description" placeholder=" " rows="6"></textarea>
+                    <textarea type="text" name="description" formControlName="description" id="description" placeholder=" " rows="6"></textarea>
                     <label for="description">Write a description…</label>
                 </div>
             </div>
             <div class="create-btn">
-                <button class="primary-btn">Create New Sighting</button>
+                <button class="primary-btn" type="submit">Create New Sighting</button>
             </div>
-        </div>
+        </form>
     </div>
 </div>

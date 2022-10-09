@@ -27,8 +27,8 @@ export class ApiService {
     });
   }
 
-  post(model: string, type: string, data?: any, id?: number) {
-    return this.http.post(`${environment.backUrl}/api/v1/${model}${this.checkIfDataExists(id)}/${type}`, data, {
+  post(model: string, type?: string, data?: any, id?: number) {
+    return this.http.post(`${environment.backUrl}/api/v1/${model}${this.checkIfDataExists(id)}${this.checkIfDataExists(type)}`, data, {
       headers: {
         'Authorization': this.getToken()
       }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IComment } from '../models/Comment';
-import { ISighting } from '../models/Sighting';
+import { Sighting } from '../models/Sighting';
 import { ApiService } from './api.service';
 
 @Injectable({
@@ -18,7 +18,7 @@ export class SightingService {
     return this.apiService.get('sightings', id);
   }
 
-  createSighting(sighting: ISighting) {
+  createSighting(sighting: FormData) {
     return this.apiService.post('sightings', '', sighting);
   }
 
