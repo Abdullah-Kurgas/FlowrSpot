@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ISighting } from 'src/app/shared/models/Sighting';
+import { ActivatedRoute } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { mergeMap } from 'rxjs';
+import { AppState } from 'src/app/appState';
+import { IComment } from 'src/app/shared/models/Comment';
+import { ISighting, Sighting } from 'src/app/shared/models/Sighting';
+import { SightingService } from 'src/app/shared/services/sighting.service';
 
 @Component({
   selector: 'fs-sighting-detail',
@@ -7,33 +13,25 @@ import { ISighting } from 'src/app/shared/models/Sighting';
   styleUrls: ['./sighting-detail.component.scss']
 })
 export class SightingDetailComponent implements OnInit {
+  sighting: Sighting = new Sighting();
+  comments!: IComment[];
 
-  testItem: any = {
-    comments_count: 0,
-            created_at: '2022-10-01T10:15:49.528Z',
-            description: 'asdf asdf asdf asdf ',
-            flower: {
-                id: 14,
-                latin_name: 'Ophrys apifera',
-                name: 'Bee orchid',
-                profile_picture: '//flowrspot.s3.amazonaws.com/flowers/profile_pictures/000/000/014/medium/L_00010.jpg?1527514642',
-            },
-            id: 227,
-            latitude: 12.5,
-            likes_count: 0,
-            longitude: 13.5,
-            name: 'test vari',
-            picture: '//flowrspot.s3.amazonaws.com/sightings/pictures/000/000/227/medium/index.jpg?1664619349',
-            user: {
-                full_name: 'tevenin norton',
-                id: 7644,
-            },
-  }
-
-
-  constructor() { }
+  constructor(private sightingService: SightingService, private store: Store<AppState>, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.sightingService.getSightingInfo(this.route.snapshot.params['id'])
+      .pipe(
+        mergeMap(({ sighting }: any) => {
+          this.sighting = sighting;
+          return this.sightingService.getCommentList(sighting.id);
+        })
+      ).subscribe({
+        next: ({comments}: any) => {
+          this.comments = comments;
+        },
+        error: err => console.error(err)
+      })
+
   }
 
 }
