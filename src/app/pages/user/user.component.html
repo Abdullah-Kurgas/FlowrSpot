@@ -1,0 +1,18 @@
+<div class="user">
+
+    <div class="sm-info">
+        <div class="profile-img">
+            <img src="../../../../assets/profile-holder.png"
+                alt="profile-pic">
+        </div>
+        <div class="info">
+            <h1>{{user?.first_name}} {{user?.last_name}}</h1>
+            <span>{{userSightings?.length}} sightings</span>
+        </div>
+    </div>
+
+    <button class="primary-btn">Report</button>
+
+</div>
+
+<fs-list [dataList]="userSightings" [dataType]="'sightings'"></fs-list>

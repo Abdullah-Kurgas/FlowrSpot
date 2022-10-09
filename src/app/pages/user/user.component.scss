@@ -1,0 +1,39 @@
+.user {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 4rem;
+
+    .sm-info {
+        display: flex;
+        align-items: center;
+        margin-bottom: 2rem;
+
+        .profile-img {
+            width: 80px;
+
+            img {
+                width: 100%;
+                border-radius: 50%;
+            }
+        }
+
+        .info {
+            margin: 0 2rem;
+            text-align: left;
+
+            h1 {
+                margin: 0;
+                font-weight: 300;
+                font-size: 25px;
+                color: #334144;
+            }
+
+            span {
+                font-weight: 400;
+                font-size: 13px;
+                color: #949EA0;
+            }
+        }
+    }
+}

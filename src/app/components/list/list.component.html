@@ -1,11 +1,11 @@
 <div class="list">
 
     <div class="flower-card-list" *ngIf="dataType == 'flowers'">
-        <fs-flower-card *ngFor="let flower of dataList | async" [flower]="flower" (click)="navigateToDetails('flower', utils.getDataFromInsideObj(flower, 'id'))"></fs-flower-card>
+        <fs-flower-card *ngFor="let flower of  (!dataList?.length? (dataList | async) : dataList )" [flower]="flower" (click)="navigateToDetails('flower', utils.getDataFromInsideObj(flower, 'id'))"></fs-flower-card>
     </div>
 
     <div class="sighting-card-list" *ngIf="dataType == 'sightings'">
-        <fs-sighting-card *ngFor="let sighting of dataList | async" [sighting]="sighting" (click)="navigateToDetails('sighting', sighting.id)"></fs-sighting-card>
+        <fs-sighting-card *ngFor="let sighting of (!dataList?.length? (dataList | async) : dataList)" [sighting]="sighting" (click)="navigateToDetails('sighting', sighting.id)"></fs-sighting-card>
     </div>
 
 </div>

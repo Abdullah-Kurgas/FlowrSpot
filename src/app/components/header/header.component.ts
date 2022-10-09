@@ -29,7 +29,7 @@ export class HeaderComponent implements OnInit {
   }
 
   navigate(url: string) {
-    this.router.navigate([url]).then(value => {
+    this.router.navigateByUrl(url).then(value => {
       if(value) this.expanded = false;
     })
   }

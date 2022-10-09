@@ -9,7 +9,7 @@ import { Utils } from 'src/app/shared/Utils';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-  @Input() dataList!: Observable<any[]>;
+  @Input() dataList!: Observable<any[]> | any;
   @Input() dataType!: string;
 
   utils = Utils;

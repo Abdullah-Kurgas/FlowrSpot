@@ -25,6 +25,7 @@ import { FlowerDetailComponent } from './pages/flowers/flower-detail/flower-deta
 import { SightingDetailComponent } from './pages/sightings/sighting-detail/sighting-detail.component';
 import { CommentComponent } from './components/comment/comment.component';
 import { SightingCreateComponent } from './pages/sightings/sighting-create/sighting-create.component';
+import { UserComponent } from './pages/user/user.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { SightingCreateComponent } from './pages/sightings/sighting-create/sight
     FlowerDetailComponent,
     SightingDetailComponent,
     CommentComponent,
-    SightingCreateComponent
+    SightingCreateComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

@@ -13,8 +13,8 @@ export class AuthService {
     return this.apiService.post('users', type, user);
   }
 
-  getUserData(type: string) {
-    return this.apiService.get('users', undefined, type);
+  getUserData(type?: string, id?: number) {
+    return this.apiService.get('users', id, type);
   }
 
 }

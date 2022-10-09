@@ -7,6 +7,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { SightingCreateComponent } from './pages/sightings/sighting-create/sighting-create.component';
 import { SightingDetailComponent } from './pages/sightings/sighting-detail/sighting-detail.component';
 import { SightingsComponent } from './pages/sightings/sightings.component';
+import { UserComponent } from './pages/user/user.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'flower/:id', component: FlowerDetailComponent },
   { path: 'sighting/:id', component: SightingDetailComponent },
   { path: 'flower/:id/sighting-create', component: SightingCreateComponent },
+  { path: 'user/:id', component: UserComponent },
 ];
 
 @NgModule({
