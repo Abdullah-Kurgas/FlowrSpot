@@ -16,6 +16,9 @@
         border-radius: 3px;
         padding: 2rem;
         text-align: center;
+        position: relative;
+        animation-name: animatetop;
+        animation-duration: 0.4s;
 
         h2 {
             margin-bottom: 2rem;
@@ -48,5 +51,17 @@
         &:hover {
             text-decoration: underline;
         }
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
     }
 }

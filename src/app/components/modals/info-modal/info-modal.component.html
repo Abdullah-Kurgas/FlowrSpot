@@ -70,12 +70,12 @@
 
         </div>
 
-        <div class="logout-btn">
+        <div class="btns">
             <button class="primary-btn" *ngIf="type == 'profile'" (click)="userLogout()">Logout</button>
 
             <div *ngIf="type == 'message'">
                 <button class="primary-btn" (click)="item.id ? modalService.close() : modalService.open('modal', 'login')">Ok</button>
-                <button class="primary-btn" *ngIf=" item.id" (click)="modalService.open('info', 'profile')">Profile</button>
+                <button class="primary-btn-outline" *ngIf=" item.id" (click)="modalService.open('info', 'profile')">Profile</button>
             </div>
 
             <button class="primary-btn" *ngIf="type == 'settings'">Save settings</button>
