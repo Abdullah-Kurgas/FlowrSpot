@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/appState';
+import { Create } from 'src/app/shared/actions/sightingAction';
 import { SightingService } from 'src/app/shared/services/sighting.service';
 
 @Component({
@@ -21,7 +24,7 @@ export class SightingCreateComponent implements OnInit {
   );
   photoFile?: File;
 
-  constructor(private route: ActivatedRoute, private sightingService: SightingService, private router: Router) { }
+  constructor(private route: ActivatedRoute, private sightingService: SightingService, private router: Router, private store: Store<AppState>) { }
 
   ngOnInit(): void {
     this.form.controls["flower_id"].setValue(this.route.snapshot.params['id']);
@@ -41,8 +44,8 @@ export class SightingCreateComponent implements OnInit {
 
     this.sightingService.createSighting(uploadData).subscribe({
       next: ({ sighting }: any) => {
+        this.store.dispatch(new Create(sighting));
         this.router.navigate(['sighting', sighting.id]);
-
       },
       error: err => console.error(err)
     })
