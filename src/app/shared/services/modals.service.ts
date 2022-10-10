@@ -13,7 +13,8 @@ export class ModalsService {
     this.opened.type = type;
   }
 
-  close() {
+  close(reload: boolean = false) {
     this.opened = {};
+    if(reload) location.reload();
   }
 }

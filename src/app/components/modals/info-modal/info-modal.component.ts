@@ -24,7 +24,7 @@ export class InfoModalComponent implements OnInit {
 
   userLogout() {
     this.store.dispatch(new Logout());
-    this.modalService.close();
+    this.modalService.close(true);
   }
 
 }
