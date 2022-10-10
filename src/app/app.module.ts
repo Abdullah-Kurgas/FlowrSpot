@@ -29,6 +29,7 @@ import { authReducer, userReducer } from './shared/reducers/authReducer';
 import { flowerReducer } from './shared/reducers/flowerReducer';
 import { favoriteReducer } from './shared/reducers/favoriteReducer';
 import { sightingReducer } from './shared/reducers/sightingReducer';
+import { SearchInputComponent } from './components/search-input/search-input.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { sightingReducer } from './shared/reducers/sightingReducer';
     SightingDetailComponent,
     CommentComponent,
     SightingCreateComponent,
-    UserComponent
+    UserComponent,
+    SearchInputComponent
   ],
   imports: [
     BrowserModule,

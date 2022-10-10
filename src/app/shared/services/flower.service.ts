@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Params } from '@angular/router';
 import { ApiService } from './api.service';
 
 @Injectable({
@@ -8,8 +9,8 @@ export class FlowerService {
 
   constructor(private apiService: ApiService) { }
 
-  getFlowerList(id?: number, type: string = '') {
-    return this.apiService.get('flowers', id, type);
+  getFlowerList(id?: number, type: string = '', options: Params | undefined = undefined) {
+    return this.apiService.get('flowers', id, type, options);
   }
 
   getFlowerDetail(id: number) {

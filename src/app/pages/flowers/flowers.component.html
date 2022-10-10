@@ -1,8 +1,5 @@
 <div>
-    <div class="input-search-group" *ngIf="showSearch">
-        <input type="text" placeholder="Looking for something specific?">
-        <span class="material-symbols-outlined">search</span>
-    </div>
+   <fs-search-input *ngIf="showSearch"></fs-search-input>
 
     <fs-list [dataList]="flowers" [dataType]="'flowers'"></fs-list>
 </div>
