@@ -8,7 +8,6 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class ApiService {
-  isDesktopMode: boolean = window.screen.width < 780 ? false : true;
 
   constructor(private http: HttpClient, private store: Store<AppState>) { }
 

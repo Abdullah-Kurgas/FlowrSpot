@@ -32,6 +32,7 @@
             }
 
             .icon {
+                display: none;
                 font-size: 2rem;
                 cursor: pointer;
             }
@@ -51,7 +52,7 @@
 
         .list {
             margin-top: 4rem;
-            display: flex;
+            display: flex !important;
             flex-direction: column;
         }
 
@@ -84,4 +85,13 @@
         color: #949EA0;
     }
 
+}
+
+@media (max-width: 780px) {
+    .icon {
+        display: block !important;
+    }
+    .list {
+        display: none !important;
+    }
 }

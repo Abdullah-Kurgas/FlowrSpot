@@ -6,7 +6,7 @@
         </div>
         <div class="navbar">
     
-            <div class="list" *ngIf="apiService.isDesktopMode">
+            <div class="list">
                 <span class="item" (click)="navigate('/flowers')">Flowers</span>
                 <span class="item" (click)="navigate('/sightings')">Latest Sightings</span>
                 <span class="item" (click)="navigate('/favorites')">Favorites</span>
@@ -23,11 +23,11 @@
                 </div>
             </div>
     
-            <span class="material-symbols-outlined icon" *ngIf="!apiService.isDesktopMode" (click)="expanded = !expanded">{{expanded ? 'close' : 'menu'}}</span>
+            <span class="material-symbols-outlined icon" (click)="expanded = !expanded">{{expanded ? 'close' : 'menu'}}</span>
         </div>
     </div>
 
-    <div class="mobile-list" *ngIf="!apiService.isDesktopMode && expanded" >
+    <div class="mobile-list" *ngIf="expanded" >
         <div class="list">
 
             <span class="item" (click)="navigate('/flowers')">Flowers</span>
