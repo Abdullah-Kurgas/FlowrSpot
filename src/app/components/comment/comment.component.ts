@@ -18,6 +18,8 @@ export class CommentComponent implements OnInit {
   }
 
   createComment() {
+    if(this.content.length == 0) return;
+
     this.sightingService.createComment({ content: this.content }, this.route.snapshot.params['id']).subscribe({
       next: ({comment}: any) => {
         this.comments?.push(comment);
@@ -25,6 +27,10 @@ export class CommentComponent implements OnInit {
       },
       error: err => console.error(err)
     });
+  }
+
+  scrollTo() {
+    window.scrollBy(0, screen.height * 100);
   }
 
 }
