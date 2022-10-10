@@ -3,8 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { mergeMap } from 'rxjs';
 import { AppState } from 'src/app/appState';
-import { ToggleFavorite } from 'src/app/shared/actions/favoriteAction';
-import { ToggleFlower } from 'src/app/shared/actions/flowerAction';
 import { Flower } from 'src/app/shared/models/Flower';
 import { ISighting } from 'src/app/shared/models/Sighting';
 import { FlowerService } from 'src/app/shared/services/flower.service';
@@ -37,27 +35,6 @@ export class FlowerDetailComponent implements OnInit {
       },
       error: err => console.error(err)
     })
-  }
-
-  toggleFavorite(flower: any) {
-    if (this.utils.getDataFromInsideObj(flower, 'favorite')) {
-      this.flowerService.removeFromFavoriteList(flower.id, this.utils.getDataFromInsideObj(flower, 'id')).subscribe({
-        next: res => {
-          this.store.dispatch(new ToggleFavorite(flower));
-        },
-        error: err => console.error(err)
-      })
-      return;
-    }
-
-    if (!flower.favorite) {
-      this.flowerService.addToFavoriteList(flower.id).subscribe({
-        next: (res) => {
-          this.store.dispatch(new ToggleFlower(flower));
-        },
-        error: err => console.error(err)
-      })
-    }
   }
 
 }
