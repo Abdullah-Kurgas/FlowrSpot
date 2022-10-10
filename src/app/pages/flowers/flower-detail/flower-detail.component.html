@@ -10,7 +10,7 @@
 
             <div class="title-info">
                 <div class="sight-fav">
-                    <div class="favorite-icon" [ngClass]="{'bg-primary': utils.getDataFromInsideObj(flower, 'favorite')}" (click)="toggleFavorite(flower)">
+                    <div class="favorite-icon" [ngClass]="{'bg-primary': utils.getDataFromInsideObj(flower, 'favorite')}">
                         <span class="material-symbols-outlined">star</span>
                     </div>
                     <span class="footer" [ngClass]="{'bg-primary': utils.getDataFromInsideObj(flower, 'favorite')}">{{flower.sightings}} sightings</span>
