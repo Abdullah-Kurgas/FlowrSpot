@@ -23,28 +23,39 @@ export class ModalComponent implements OnInit {
   }
 
   submit(type: string) {
+    if(!this.checkInputs()) return;
+    
 
     this.authService.getAuthToken(type, this.user)
-    .pipe(
-      mergeMap( (token: any) => {
-        this.store.dispatch(new AuthToken(token['auth_token']));
-        
-        return this.authService.getUserData('me');
-      })
-    )
-    .subscribe({
-      next: ({ user }: any) => {
-        if(type == 'register') {
-          this.store.dispatch(new Register(user));
-        } else {
-          this.store.dispatch(new Login(user));
-        }
+      .pipe(
+        mergeMap((token: any) => {
+          this.store.dispatch(new AuthToken(token['auth_token']));
 
-        user = new User();
-        this.modalService.open('info', 'message');
-      },
-      error: err => console.error(err)
-    });
+          return this.authService.getUserData('me');
+        })
+      )
+      .subscribe({
+        next: ({ user }: any) => {
+          if (type == 'register') {
+            this.store.dispatch(new Register(user));
+          } else {
+            this.store.dispatch(new Login(user));
+          }
+
+          user = new User();
+          this.modalService.open('info', 'message');
+        },
+        error: err => console.error(err)
+      });
+
+  }
+
+  checkInputs(): boolean | string {
+    if (this.type == 'login') {
+      return (this.user.email && this.user.password);
+    } else {
+      return (this.user.email && this.user.password && this.user.date_of_birth && this.user.first_name && this.user.last_name)
+    }
   }
 
 }

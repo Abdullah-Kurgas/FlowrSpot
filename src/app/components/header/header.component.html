@@ -41,7 +41,7 @@
     
             <div class="profile-header" *ngIf="user">
                 <span class="item">{{user.first_name}} {{user.last_name}}</span>
-                <div (click)="modalService.open('info', 'profile')">
+                <div (click)="modalService.open('info', 'profile'); expanded = false;">
                     <img src="../../../assets/menu_profile_holder.png" alt="profile-sm-img">
                 </div>
             </div>

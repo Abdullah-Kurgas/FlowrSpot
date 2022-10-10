@@ -1,11 +1,10 @@
 <div>
   <fs-header></fs-header>
-  <div>
+  <div class="app">
     <router-outlet></router-outlet>
+
+    <!-- Modals -->
+    <fs-modal *ngIf="modalService.opened['modal'] == 'modal'" [type]="modalService.opened['type']"></fs-modal>
+    <fs-info-modal *ngIf="modalService.opened['modal'] == 'info'" [type]="modalService.opened['type']"></fs-info-modal>
   </div>
 </div>
-
-
-<!-- Modals -->
-<fs-modal *ngIf="modalService.opened['modal'] == 'modal'" [type]="modalService.opened['type']"></fs-modal>
-<fs-info-modal *ngIf="modalService.opened['modal'] == 'info'" [type]="modalService.opened['type']"></fs-info-modal>

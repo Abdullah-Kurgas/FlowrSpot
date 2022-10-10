@@ -32,6 +32,7 @@ export class HeaderComponent implements OnInit {
     this.router.navigateByUrl(url).then(value => {
       if(value) this.expanded = false;
     })
+    this.modalService.close();
   }
 
 }

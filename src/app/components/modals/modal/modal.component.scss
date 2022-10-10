@@ -20,17 +20,22 @@
         animation-name: animatetop;
         animation-duration: 0.4s;
 
+        .form-input {
+            margin: 10px 0;
+        }
+
         h2 {
             margin-bottom: 2rem;
         }
 
         .name-field {
             display: grid;
-            grid-template-columns: 50% 50%;
+            grid-template-columns: auto auto;
+            gap: 10px;
         }
 
         .create-btn {
-            margin: 1.5rem 5px 1rem 5px;
+            margin: 1.5rem 0;
 
             button {
                 border: 0;
@@ -63,5 +68,23 @@
     to {
         top: 0;
         opacity: 1
+    }
+}
+
+@media (max-width: 500px) {
+    .modal-bg {
+        position: absolute;
+        background-color: #F2F2F2;
+        min-height: 100vh;
+        bottom: unset;
+        justify-content: unset;
+        align-items: unset;
+
+        .modal {
+            background-color: unset;
+            box-shadow: unset;
+            padding: 1rem;
+            margin-top: 4rem;
+        }
     }
 }

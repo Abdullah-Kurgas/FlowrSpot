@@ -223,3 +223,25 @@
         opacity: 1
     }
 }
+
+@media (max-width: 500px) {
+    .modal-bg {
+        position: absolute;
+        background-color: #F2F2F2;
+        min-height: 100vh;
+        bottom: unset;
+        justify-content: unset;
+        align-items: unset;
+        
+        .close-btn {
+            display: none;
+        }
+
+        .modal {
+            background-color: unset;
+            box-shadow: unset;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+    }
+}

@@ -29,7 +29,6 @@
                     margin: 0 1.5rem;
                     cursor: pointer;
                 }
-
             }
 
             .icon {
@@ -43,7 +42,7 @@
     .mobile-list {
         background: #ffffff;
         position: absolute;
-        z-index: 100;
+        z-index: 1000;
         left: 0;
         right: 0;
         top: 5rem;
