@@ -16,7 +16,8 @@
             </div>
         </div>
 
-        <div class="description">{{sighting?.description}}</div>
+        <div class="description">{{cardType !== 'horizontal' ? sighting?.description?.substring(0, 150) +
+            (sighting?.description?.length! > 150 ? '...':'') : sighting?.description}}</div>
 
         <div class="info">
             <div class="comments">
