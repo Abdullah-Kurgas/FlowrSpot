@@ -50,12 +50,13 @@ export class ModalComponent implements OnInit {
 
   }
 
-  checkInputs(): boolean | string {
+  checkInputs(): boolean | string | undefined {
     if (this.type == 'login') {
-      return (this.user.email && this.user.password);
+
+      return (this.user.email && this.user.password) ? true : false;
     } else {
-      return (this.user.email && this.user.password && this.user.date_of_birth && this.user.first_name && this.user.last_name)
-    }
+      return (this.user.email && this.user.password && this.user.date_of_birth && this.user.first_name && this.user.last_name) ? true : false;
+    } 
   }
 
 }
