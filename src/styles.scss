@@ -173,6 +173,17 @@ body {
     align-items: center;
     justify-content: center;
     background: rgba(0, 0, 0, 0.5);
+
+    .modal {
+        background: #FFFFFF;
+        box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.05);
+        border-radius: 3px;
+        padding: 2rem;
+        text-align: center;
+        position: relative;
+        animation-name: animatetop;
+        animation-duration: 0.4s;
+    }
 }
 
 @media (max-width: 500px) {

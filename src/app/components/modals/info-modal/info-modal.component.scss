@@ -1,92 +1,85 @@
 .modal {
-    background: #FFFFFF;
-    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.05);
-    border-radius: 3px;
     padding: 3rem 7rem;
-    text-align: center;
-    position: relative;
-    animation-name: animatetop;
-    animation-duration: 0.4s;
+}
 
-    .close-btn {
-        color: #949EA0;
-        position: absolute;
-        right: 0;
-        top: 0;
-        margin: 1rem;
-        cursor: pointer;
-    }
+.close-btn {
+    color: #949EA0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 1rem;
+    cursor: pointer;
+}
 
-    .profile {
-        .sm-info {
-            display: flex;
-            align-items: center;
-            margin-bottom: 2rem;
+.profile {
+    .sm-info {
+        display: flex;
+        align-items: center;
+        margin-bottom: 2rem;
 
-            .profile-img {
-                width: 80px;
+        .profile-img {
+            width: 80px;
 
-                img {
-                    width: 100%;
-                    border-radius: 50%;
-                }
-            }
-
-            .info {
-                margin: 0 2rem;
-                text-align: left;
-
-                h1 {
-                    margin: 0;
-                    font-weight: 300;
-                    font-size: 25px;
-                    color: #334144;
-                }
-
-                span {
-                    font-weight: 400;
-                    font-size: 13px;
-                    color: #949EA0;
-                }
+            img {
+                width: 100%;
+                border-radius: 50%;
             }
         }
 
-        .content {
+        .info {
+            margin: 0 2rem;
             text-align: left;
 
-            div {
-                margin-bottom: 2rem;
+            h1 {
+                margin: 0;
+                font-weight: 300;
+                font-size: 25px;
+                color: #334144;
+            }
 
-                p {
-                    font-weight: 400;
-                    font-size: 10px;
-                    color: #949EA0;
-                }
-
-                span {
-                    font-weight: 400;
-                    font-size: 18px;
-                    color: #334144;
-                }
+            span {
+                font-weight: 400;
+                font-size: 13px;
+                color: #949EA0;
             }
         }
     }
 
-    .btns {
-        margin-top: 4rem;
+    .content {
+        text-align: left;
+
+        div {
+            margin-bottom: 2rem;
+
+            p {
+                font-weight: 400;
+                font-size: 10px;
+                color: #949EA0;
+            }
+
+            span {
+                font-weight: 400;
+                font-size: 18px;
+                color: #334144;
+            }
+        }
+    }
+}
+
+.btns {
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    div {
         display: flex;
         align-items: center;
         justify-content: center;
+    }
 
-        div {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        button {
-            margin: .5rem;
-        }
+    button {
+        margin: .5rem;
     }
 }
 

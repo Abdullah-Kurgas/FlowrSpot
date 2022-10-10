@@ -1,36 +1,25 @@
-.modal {
-    background: #FFFFFF;
-    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.05);
-    border-radius: 3px;
-    padding: 2rem;
-    text-align: center;
-    position: relative;
-    animation-name: animatetop;
-    animation-duration: 0.4s;
+.form-input {
+    margin: 10px 0;
+}
 
-    .form-input {
-        margin: 10px 0;
-    }
+h2 {
+    margin-bottom: 2rem;
+}
 
-    h2 {
-        margin-bottom: 2rem;
-    }
+.name-field {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+}
 
-    .name-field {
-        display: grid;
-        grid-template-columns: auto auto;
-        gap: 10px;
-    }
+.create-btn {
+    margin: 1.5rem 0;
 
-    .create-btn {
-        margin: 1.5rem 0;
-
-        button {
-            border: 0;
-            padding: 1rem;
-            width: 100%;
-            font-size: 15px;
-        }
+    button {
+        border: 0;
+        padding: 1rem;
+        width: 100%;
+        font-size: 15px;
     }
 }
 
@@ -45,7 +34,6 @@
         text-decoration: underline;
     }
 }
-
 
 @keyframes animatetop {
     from {
