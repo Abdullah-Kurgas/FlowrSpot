@@ -39,37 +39,6 @@
             <h3>Congratulations! You have successfully {{item.id ? 'logged into': 'signed up for'}} FlowrSpot!</h3>
         </div>
 
-        <div class="settings"  *ngIf="type == 'settings'">
-            <div class="title">
-                <h2>Settings</h2>
-                <span class="material-symbols-outlined">settings</span>
-            </div>
-            <div class="notification">
-                <span>Turn notifications</span>
-                <label class="switch">
-                    <input type="checkbox">
-                    <span class="slider"></span>
-                    <div class="switch-labels">
-                        <span class="selected">off</span>
-                        <span>on</span>
-                    </div>
-                </label>
-            </div>
-
-            <div class="radius">
-                <span>Select favorite flower sighting radius for notifications</span>
-                <div class="range">
-                    <input type="range" min="1" max="3" step="1" value="1" list="range">
-                    <datalist id="range">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                    </datalist>
-                </div>
-            </div>
-
-        </div>
-
         <div class="btns">
             <button class="primary-btn" *ngIf="type == 'profile'" (click)="userLogout()">Logout</button>
 
@@ -77,8 +46,6 @@
                 <button class="primary-btn" (click)="item.id ? modalService.close() : modalService.open('modal', 'login')">Ok</button>
                 <button class="primary-btn-outline" *ngIf=" item.id" (click)="modalService.open('info', 'profile')">Profile</button>
             </div>
-
-            <button class="primary-btn" *ngIf="type == 'settings'">Save settings</button>
         </div>
 
     </div>

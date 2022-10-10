@@ -1,63 +1,51 @@
-.modal-bg {
-    position: fixed;
-    z-index: 100;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0, 0, 0, 0.5);
+.modal {
+    background: #FFFFFF;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
 
-    .modal {
-        background: #FFFFFF;
-        box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.05);
-        border-radius: 3px;
-        padding: 2rem;
-        text-align: center;
-        position: relative;
-        animation-name: animatetop;
-        animation-duration: 0.4s;
-
-        .form-input {
-            margin: 10px 0;
-        }
-
-        h2 {
-            margin-bottom: 2rem;
-        }
-
-        .name-field {
-            display: grid;
-            grid-template-columns: auto auto;
-            gap: 10px;
-        }
-
-        .create-btn {
-            margin: 1.5rem 0;
-
-            button {
-                border: 0;
-                padding: 1rem;
-                width: 100%;
-                font-size: 15px;
-            }
-        }
+    .form-input {
+        margin: 10px 0;
     }
 
-    .cancel-text {
-        margin-top: 1rem;
-        font-size: 13px;
-        color: #FFFFFF;
-        opacity: 0.5;
-        cursor: pointer;
+    h2 {
+        margin-bottom: 2rem;
+    }
 
-        &:hover {
-            text-decoration: underline;
+    .name-field {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 10px;
+    }
+
+    .create-btn {
+        margin: 1.5rem 0;
+
+        button {
+            border: 0;
+            padding: 1rem;
+            width: 100%;
+            font-size: 15px;
         }
     }
 }
+
+.cancel-text {
+    margin-top: 1rem;
+    font-size: 13px;
+    color: #FFFFFF;
+    opacity: 0.5;
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
 
 @keyframes animatetop {
     from {
@@ -68,23 +56,5 @@
     to {
         top: 0;
         opacity: 1
-    }
-}
-
-@media (max-width: 500px) {
-    .modal-bg {
-        position: absolute;
-        background-color: #F2F2F2;
-        min-height: 100vh;
-        bottom: unset;
-        justify-content: unset;
-        align-items: unset;
-
-        .modal {
-            background-color: unset;
-            box-shadow: unset;
-            padding: 1rem;
-            margin-top: 4rem;
-        }
     }
 }
