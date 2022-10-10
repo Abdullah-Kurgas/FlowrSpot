@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -26,6 +26,7 @@ import { SightingDetailComponent } from './pages/sightings/sighting-detail/sight
 import { CommentComponent } from './components/comment/comment.component';
 import { SightingCreateComponent } from './pages/sightings/sighting-create/sighting-create.component';
 import { UserComponent } from './pages/user/user.component';
+import { HttpInterceptorInterceptor } from './shared/http-interceptor.interceptor';
 
 
 @NgModule({
@@ -61,7 +62,9 @@ import { UserComponent } from './pages/user/user.component';
       sightings: sightingReducer
     })
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorInterceptor, multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
