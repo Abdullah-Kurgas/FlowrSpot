@@ -1,27 +1,9 @@
-# FlowrSpot
+Hi, I hope you are well. :)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
+Anyway to run app first install node_package (npm install), after that run project (ng serve).
 
-## Development server
+Just in case to know:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Project has search function, on sighting card clicking on (by 'some user') will send you to user page and 'add new sighting' buttons in sighting list are not working (there is good explanation for that), to create new sighting, got to flower detail by (clicking on flower card) and after that 'add new sighting' button will work.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+That's it, I hope its good and see you... maybe.
