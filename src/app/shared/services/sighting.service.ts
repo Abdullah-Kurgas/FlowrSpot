@@ -6,31 +6,32 @@ import { ApiService } from './api.service';
   providedIn: 'root'
 })
 export class SightingService {
+  model: string = 'sightings'
 
   constructor(private apiService: ApiService) { }
 
   getSightingList() {
-    return this.apiService.get('sightings');
+    return this.apiService.get(this.model);
   }
 
   getSightingInfo(id: number) {
-    return this.apiService.get('sightings', id);
+    return this.apiService.get(this.model, id);
   }
 
   createSighting(sighting: FormData) {
-    return this.apiService.post('sightings', '', sighting);
+    return this.apiService.post(this.model, '', sighting);
   }
 
   deleteSighting(id: number) {
-    return this.apiService.delete('sightings', undefined, { id: id, parent_id: undefined })
+    return this.apiService.delete(this.model, undefined, { id: id, parent_id: undefined })
   }
 
   /** Comments **/
   getCommentList(sighting_id: number) {
-    return this.apiService.get('sightings', sighting_id, 'comments');
+    return this.apiService.get(this.model, sighting_id, 'comments');
   }
 
   createComment(data: Comment, sighting_id: number) {
-    return this.apiService.post('sightings', 'comments', data, sighting_id);
+    return this.apiService.post(this.model, 'comments', data, sighting_id);
   }
 }

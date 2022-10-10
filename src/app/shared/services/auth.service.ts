@@ -6,15 +6,16 @@ import { ApiService } from './api.service';
   providedIn: 'root'
 })
 export class AuthService {
+  model: string = 'users';
 
   constructor(private apiService: ApiService) { }
 
   getAuthToken(type: string, user: IUser) {
-    return this.apiService.post('users', type, user);
+    return this.apiService.post(this.model, type, user);
   }
 
   getUserData(type?: string, id?: number) {
-    return this.apiService.get('users', id, type);
+    return this.apiService.get(this.model, id, type);
   }
 
 }
