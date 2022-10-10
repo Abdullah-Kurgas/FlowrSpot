@@ -36,15 +36,15 @@
         </div>
 
         <div class="message" *ngIf="type == 'message'">
-            <h3>Congratulations! You have successfully {{item.id ? 'logged into': 'signed up for'}} FlowrSpot!</h3>
+            <h3>Congratulations! You have successfully {{item?.id ? 'logged into': 'signed up for'}} FlowrSpot!</h3>
         </div>
 
         <div class="btns">
             <button class="primary-btn" *ngIf="type == 'profile'" (click)="userLogout()">Logout</button>
 
             <div *ngIf="type == 'message'">
-                <button class="primary-btn" (click)="item.id ? modalService.close(true) : modalService.open('modal', 'login')">Ok</button>
-                <button class="primary-btn-outline" *ngIf=" item.id" (click)="modalService.open('info', 'profile')">Profile</button>
+                <button class="primary-btn" (click)="item?.id ? modalService.close(true) : modalService.open('modal', 'login')">Ok</button>
+                <button class="primary-btn-outline" *ngIf="item?.id" (click)="modalService.open('info', 'profile')">Profile</button>
             </div>
         </div>
 

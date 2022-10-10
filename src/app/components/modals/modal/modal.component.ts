@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/appState';
-import { AuthToken, Login, Register } from 'src/app/shared/actions/authAction';
+import { AuthToken, Login, Logout, Register } from 'src/app/shared/actions/authAction';
 import { ModalsService } from 'src/app/shared/services/modals.service';
 import { IUser, User } from 'src/app/shared/models/User';
 import { AuthService } from 'src/app/shared/services/auth.service';
@@ -36,11 +36,8 @@ export class ModalComponent implements OnInit {
       )
       .subscribe({
         next: ({ user }: any) => {
-          if (type == 'register') {
-            this.store.dispatch(new Register(user));
-          } else {
-            this.store.dispatch(new Login(user));
-          }
+          if (type == 'login') this.store.dispatch(new Login(user));
+          else this.store.dispatch(new Logout());
 
           user = new User();
           this.modalService.open('info', 'message');
@@ -52,7 +49,6 @@ export class ModalComponent implements OnInit {
 
   checkInputs(): boolean | string | undefined {
     if (this.type == 'login') {
-
       return (this.user.email && this.user.password) ? true : false;
     } else {
       return (this.user.email && this.user.password && this.user.date_of_birth && this.user.first_name && this.user.last_name) ? true : false;
