@@ -97,6 +97,7 @@
             font-size: 13px;
             margin-top: 3rem;
             margin-right: 8.5rem;
+            line-height: 25px;
         }
 
         .description {
@@ -106,4 +107,36 @@
             margin: 0 4.5rem;
         }
     }
+}
+
+@media (max-width: 700px) {
+.content{
+    padding-top: 10rem !important;
+    
+    .sm-image {
+        display: none;
+    }
+
+    .sm-info {
+        flex-direction: column;
+        align-items: unset !important;
+        justify-content: unset !important;
+        margin: 0 !important;
+
+        .title-info {
+            margin-bottom: 3rem;
+        }
+    }
+
+   
+}
+ .description-info {
+     display: flex !important;
+     flex-direction: column;
+     border-bottom: unset !important;
+
+     .description {
+        margin: 3rem 0 0 0 !important;
+     }
+ }
 }

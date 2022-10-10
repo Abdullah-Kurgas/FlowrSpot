@@ -23,3 +23,17 @@
         }
     }
 }
+
+@media (max-width: 700px) {
+    .sighting .content .actions {
+        position: absolute;
+        top: 0;
+        margin: 2rem auto;
+        justify-content: center;
+        width: 100%;
+
+        button {
+            margin: 0 .5rem;
+        }
+    }
+}

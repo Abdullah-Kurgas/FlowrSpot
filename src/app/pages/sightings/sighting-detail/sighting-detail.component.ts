@@ -14,6 +14,8 @@ export class SightingDetailComponent implements OnInit {
   sighting?: ISighting;
   comments!: IComment[];
 
+  screenWidth: number = window.screen.width;
+
   constructor(private sightingService: SightingService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {

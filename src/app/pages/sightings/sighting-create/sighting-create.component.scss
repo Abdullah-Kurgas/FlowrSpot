@@ -33,18 +33,24 @@
             }
 
             .content-body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
 
                 .image-inputs {
                     display: grid;
                     grid-template-columns: 50% auto auto;
                     align-items: center;
+                    gap: 1rem;
+                    width: 100%;
+                    margin-bottom: 10px;
 
                     .photo-input {
                         position: relative;
                         margin: 0 10px;
-                        
+
                         label {
-                            float: right;
+                            width: auto;
                         }
 
                         input {
@@ -63,5 +69,29 @@
                 margin: 1.5rem 10px;
             }
         }
+    }
+}
+
+@media (max-width: 700px) {
+
+    .actions {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    .image-inputs {
+        display: flex !important;
+        flex-direction: column;
+
+        .photo-input {
+            width: 100%;
+
+            label {
+                width: auto !important;
+                float: unset !important;
+            }
+        }
+
+
     }
 }
